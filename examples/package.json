@@ -1,0 +1,20 @@
+{
+  "name": "@tg-ui/examples",
+  "private": true,
+  "description": "",
+  "scripts": {
+    "dev": "vite",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {},
+  "devDependencies": {
+    "vue": "^3.2.25",
+    "@vitejs/plugin-vue": "^2.3.0",
+    "typescript": "^4.5.4",
+    "vite": "^2.9.0",
+    "vue-tsc": "^0.29.8"
+  }
+}

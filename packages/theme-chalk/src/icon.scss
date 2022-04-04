@@ -1,0 +1,2411 @@
+@use './mixins/mixins.scss' as *;
+
+@font-face {
+  font-family: 'tg-ui-icons'; /* Project id 3302839 */
+  src: url('./fonts/iconfont.woff2') format('woff2'), url('./fonts/iconfont.woff') format('woff'),
+  url('./fonts/iconfont.ttf') format('truetype');
+}
+
+[class^='#{$namespace}-icon'], [class*='#{$namespace}-icon'] {
+  font-family: 'tg-ui-icons' !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.#{$namespace}-icon-tag:before {
+  content: '\e84a';
+}
+
+.#{$namespace}-icon-dropbox:before {
+  content: '\e94a';
+}
+
+.#{$namespace}-icon-wrench:before {
+  content: '\e84b';
+}
+
+.#{$namespace}-icon-dingtalk:before {
+  content: '\e94b';
+}
+
+.#{$namespace}-icon-tags:before {
+  content: '\e84c';
+}
+
+.#{$namespace}-icon-android-fill:before {
+  content: '\e94c';
+}
+
+.#{$namespace}-icon-scissor:before {
+  content: '\e84d';
+}
+
+.#{$namespace}-icon-apple-fill:before {
+  content: '\e94d';
+}
+
+.#{$namespace}-icon-mr:before {
+  content: '\e84e';
+}
+
+.#{$namespace}-icon-html-fill:before {
+  content: '\e94e';
+}
+
+.#{$namespace}-icon-share:before {
+  content: '\e84f';
+}
+
+.#{$namespace}-icon-windows-fill:before {
+  content: '\e94f';
+}
+
+.#{$namespace}-icon-branches:before {
+  content: '\e850';
+}
+
+.#{$namespace}-icon-qq:before {
+  content: '\e950';
+}
+
+.#{$namespace}-icon-fork:before {
+  content: '\e851';
+}
+
+.#{$namespace}-icon-twitter:before {
+  content: '\e951';
+}
+
+.#{$namespace}-icon-shrink:before {
+  content: '\e852';
+}
+
+.#{$namespace}-icon-skype-fill:before {
+  content: '\e952';
+}
+
+.#{$namespace}-icon-arrawsalt:before {
+  content: '\e853';
+}
+
+.#{$namespace}-icon-weibo:before {
+  content: '\e953';
+}
+
+.#{$namespace}-icon-verticalright:before {
+  content: '\e854';
+}
+
+.#{$namespace}-icon-yuque-fill:before {
+  content: '\e954';
+}
+
+.#{$namespace}-icon-verticalleft:before {
+  content: '\e855';
+}
+
+.#{$namespace}-icon-youtube-fill:before {
+  content: '\e955';
+}
+
+.#{$namespace}-icon-right:before {
+  content: '\e856';
+}
+
+.#{$namespace}-icon-yahoo-fill:before {
+  content: '\e956';
+}
+
+.#{$namespace}-icon-left:before {
+  content: '\e857';
+}
+
+.#{$namespace}-icon-wechat-fill:before {
+  content: '\e957';
+}
+
+.#{$namespace}-icon-up:before {
+  content: '\e858';
+}
+
+.#{$namespace}-icon-chrome-fill:before {
+  content: '\e958';
+}
+
+.#{$namespace}-icon-down:before {
+  content: '\e859';
+}
+
+.#{$namespace}-icon-alipay-circle-fill:before {
+  content: '\e959';
+}
+
+.#{$namespace}-icon-fullscreen:before {
+  content: '\e85a';
+}
+
+.#{$namespace}-icon-aliwangwang-fill:before {
+  content: '\e95a';
+}
+
+.#{$namespace}-icon-fullscreen-exit:before {
+  content: '\e85b';
+}
+
+.#{$namespace}-icon-behance-circle-fill:before {
+  content: '\e95b';
+}
+
+.#{$namespace}-icon-doubleleft:before {
+  content: '\e85c';
+}
+
+.#{$namespace}-icon-amazon-circle-fill:before {
+  content: '\e95c';
+}
+
+.#{$namespace}-icon-doubleright:before {
+  content: '\e85d';
+}
+
+.#{$namespace}-icon-codepen-circle-fill:before {
+  content: '\e95d';
+}
+
+.#{$namespace}-icon-arrowright:before {
+  content: '\e85e';
+}
+
+.#{$namespace}-icon-codesandbox-circle-f:before {
+  content: '\e95e';
+}
+
+.#{$namespace}-icon-arrowup:before {
+  content: '\e85f';
+}
+
+.#{$namespace}-icon-dropbox-circle-fill:before {
+  content: '\e95f';
+}
+
+.#{$namespace}-icon-arrowleft:before {
+  content: '\e860';
+}
+
+.#{$namespace}-icon-github-fill:before {
+  content: '\e960';
+}
+
+.#{$namespace}-icon-arrowdown:before {
+  content: '\e861';
+}
+
+.#{$namespace}-icon-dribbble-circle-fill:before {
+  content: '\e961';
+}
+
+.#{$namespace}-icon-upload:before {
+  content: '\e862';
+}
+
+.#{$namespace}-icon-googleplus-circle-f:before {
+  content: '\e962';
+}
+
+.#{$namespace}-icon-colum-height:before {
+  content: '\e863';
+}
+
+.#{$namespace}-icon-medium-circle-fill:before {
+  content: '\e963';
+}
+
+.#{$namespace}-icon-vertical-align-botto:before {
+  content: '\e864';
+}
+
+.#{$namespace}-icon-qq-circle-fill:before {
+  content: '\e964';
+}
+
+.#{$namespace}-icon-vertical-align-middl:before {
+  content: '\e865';
+}
+
+.#{$namespace}-icon-ie-circle-fill:before {
+  content: '\e965';
+}
+
+.#{$namespace}-icon-totop:before {
+  content: '\e866';
+}
+
+.#{$namespace}-icon-google-circle-fill:before {
+  content: '\e966';
+}
+
+.#{$namespace}-icon-vertical-align-top:before {
+  content: '\e867';
+}
+
+.#{$namespace}-icon-dingtalk-circle-fill:before {
+  content: '\e967';
+}
+
+.#{$namespace}-icon-download:before {
+  content: '\e868';
+}
+
+.#{$namespace}-icon-sketch-circle-fill:before {
+  content: '\e968';
+}
+
+.#{$namespace}-icon-sort-descending:before {
+  content: '\e869';
+}
+
+.#{$namespace}-icon-slack-circle-fill:before {
+  content: '\e969';
+}
+
+.#{$namespace}-icon-sort-ascending:before {
+  content: '\e86a';
+}
+
+.#{$namespace}-icon-twitter-circle-fill:before {
+  content: '\e96a';
+}
+
+.#{$namespace}-icon-fall:before {
+  content: '\e86b';
+}
+
+.#{$namespace}-icon-taobao-circle-fill:before {
+  content: '\e96b';
+}
+
+.#{$namespace}-icon-swap:before {
+  content: '\e86c';
+}
+
+.#{$namespace}-icon-weibo-circle-fill:before {
+  content: '\e96c';
+}
+
+.#{$namespace}-icon-stock:before {
+  content: '\e86d';
+}
+
+.#{$namespace}-icon-zhihu-circle-fill:before {
+  content: '\e96d';
+}
+
+.#{$namespace}-icon-rise:before {
+  content: '\e86e';
+}
+
+.#{$namespace}-icon-reddit-circle-fill:before {
+  content: '\e96e';
+}
+
+.#{$namespace}-icon-indent:before {
+  content: '\e86f';
+}
+
+.#{$namespace}-icon-alipay-square-fill:before {
+  content: '\e96f';
+}
+
+.#{$namespace}-icon-outdent:before {
+  content: '\e870';
+}
+
+.#{$namespace}-icon-dingtalk-square-fill:before {
+  content: '\e970';
+}
+
+.#{$namespace}-icon-menu:before {
+  content: '\e871';
+}
+
+.#{$namespace}-icon-codesandbox-square-f:before {
+  content: '\e971';
+}
+
+.#{$namespace}-icon-unorderedlist:before {
+  content: '\e872';
+}
+
+.#{$namespace}-icon-behance-square-fill:before {
+  content: '\e972';
+}
+
+.#{$namespace}-icon-orderedlist:before {
+  content: '\e873';
+}
+
+.#{$namespace}-icon-amazon-square-fill:before {
+  content: '\e973';
+}
+
+.#{$namespace}-icon-align-right:before {
+  content: '\e874';
+}
+
+.#{$namespace}-icon-codepen-square-fill:before {
+  content: '\e974';
+}
+
+.#{$namespace}-icon-align-center:before {
+  content: '\e875';
+}
+
+.#{$namespace}-icon-dribbble-square-fill:before {
+  content: '\e975';
+}
+
+.#{$namespace}-icon-align-left:before {
+  content: '\e876';
+}
+
+.#{$namespace}-icon-dropbox-square-fill:before {
+  content: '\e976';
+}
+
+.#{$namespace}-icon-pic-center:before {
+  content: '\e877';
+}
+
+.#{$namespace}-icon-facebook-fill:before {
+  content: '\e977';
+}
+
+.#{$namespace}-icon-pic-right:before {
+  content: '\e878';
+}
+
+.#{$namespace}-icon-googleplus-square-f:before {
+  content: '\e978';
+}
+
+.#{$namespace}-icon-pic-left:before {
+  content: '\e879';
+}
+
+.#{$namespace}-icon-google-square-fill:before {
+  content: '\e979';
+}
+
+.#{$namespace}-icon-bold:before {
+  content: '\e87a';
+}
+
+.#{$namespace}-icon-instagram-fill:before {
+  content: '\e97a';
+}
+
+.#{$namespace}-icon-font-colors:before {
+  content: '\e87b';
+}
+
+.#{$namespace}-icon-ie-square-fill:before {
+  content: '\e97b';
+}
+
+.#{$namespace}-icon-exclaimination:before {
+  content: '\e87c';
+}
+
+.#{$namespace}-icon-medium-square-fill:before {
+  content: '\e97c';
+}
+
+.#{$namespace}-icon-check-circle:before {
+  content: '\e77d';
+}
+
+.#{$namespace}-icon-font-size:before {
+  content: '\e87d';
+}
+
+.#{$namespace}-icon-linkedin-fill:before {
+  content: '\e97d';
+}
+
+.#{$namespace}-icon-ci:before {
+  content: '\e77e';
+}
+
+.#{$namespace}-icon-infomation:before {
+  content: '\e87e';
+}
+
+.#{$namespace}-icon-qq-square-fill:before {
+  content: '\e97e';
+}
+
+.#{$namespace}-icon-dollar:before {
+  content: '\e77f';
+}
+
+.#{$namespace}-icon-line-height:before {
+  content: '\e87f';
+}
+
+.#{$namespace}-icon-reddit-square-fill:before {
+  content: '\e97f';
+}
+
+.#{$namespace}-icon-compass:before {
+  content: '\e780';
+}
+
+.#{$namespace}-icon-strikethrough:before {
+  content: '\e880';
+}
+
+.#{$namespace}-icon-twitter-square-fill:before {
+  content: '\e980';
+}
+
+.#{$namespace}-icon-close-circle:before {
+  content: '\e781';
+}
+
+.#{$namespace}-icon-underline:before {
+  content: '\e881';
+}
+
+.#{$namespace}-icon-sketch-square-fill:before {
+  content: '\e981';
+}
+
+.#{$namespace}-icon-frown:before {
+  content: '\e782';
+}
+
+.#{$namespace}-icon-number:before {
+  content: '\e882';
+}
+
+.#{$namespace}-icon-slack-square-fill:before {
+  content: '\e982';
+}
+
+.#{$namespace}-icon-info-circle:before {
+  content: '\e783';
+}
+
+.#{$namespace}-icon-italic:before {
+  content: '\e883';
+}
+
+.#{$namespace}-icon-taobao-square-fill:before {
+  content: '\e983';
+}
+
+.#{$namespace}-icon-left-circle:before {
+  content: '\e784';
+}
+
+.#{$namespace}-icon-code:before {
+  content: '\e884';
+}
+
+.#{$namespace}-icon-weibo-square-fill:before {
+  content: '\e984';
+}
+
+.#{$namespace}-icon-down-circle:before {
+  content: '\e785';
+}
+
+.#{$namespace}-icon-column-width:before {
+  content: '\e885';
+}
+
+.#{$namespace}-icon-zhihu-square-fill:before {
+  content: '\e985';
+}
+
+.#{$namespace}-icon-euro:before {
+  content: '\e786';
+}
+
+.#{$namespace}-icon-check:before {
+  content: '\e886';
+}
+
+.#{$namespace}-icon-zoomout:before {
+  content: '\e986';
+}
+
+.#{$namespace}-icon-copyright:before {
+  content: '\e787';
+}
+
+.#{$namespace}-icon-ellipsis:before {
+  content: '\e887';
+}
+
+.#{$namespace}-icon-apartment:before {
+  content: '\e987';
+}
+
+.#{$namespace}-icon-minus-circle:before {
+  content: '\e788';
+}
+
+.#{$namespace}-icon-dash:before {
+  content: '\e888';
+}
+
+.#{$namespace}-icon-audio:before {
+  content: '\e988';
+}
+
+.#{$namespace}-icon-meh:before {
+  content: '\e789';
+}
+
+.#{$namespace}-icon-close:before {
+  content: '\e889';
+}
+
+.#{$namespace}-icon-audio-fill:before {
+  content: '\e989';
+}
+
+.#{$namespace}-icon-plus-circle:before {
+  content: '\e78a';
+}
+
+.#{$namespace}-icon-enter:before {
+  content: '\e88a';
+}
+
+.#{$namespace}-icon-robot:before {
+  content: '\e98a';
+}
+
+.#{$namespace}-icon-play-circle:before {
+  content: '\e78b';
+}
+
+.#{$namespace}-icon-line:before {
+  content: '\e88b';
+}
+
+.#{$namespace}-icon-zoomin:before {
+  content: '\e98b';
+}
+
+.#{$namespace}-icon-question-circle:before {
+  content: '\e78c';
+}
+
+.#{$namespace}-icon-minus:before {
+  content: '\e88c';
+}
+
+.#{$namespace}-icon-robot-fill:before {
+  content: '\e98c';
+}
+
+.#{$namespace}-icon-pound:before {
+  content: '\e78d';
+}
+
+.#{$namespace}-icon-question:before {
+  content: '\e88d';
+}
+
+.#{$namespace}-icon-bug-fill:before {
+  content: '\e98d';
+}
+
+.#{$namespace}-icon-right-circle:before {
+  content: '\e78e';
+}
+
+.#{$namespace}-icon-rollback:before {
+  content: '\e88e';
+}
+
+.#{$namespace}-icon-bug:before {
+  content: '\e98e';
+}
+
+.#{$namespace}-icon-smile:before {
+  content: '\e78f';
+}
+
+.#{$namespace}-icon-small-dash:before {
+  content: '\e88f';
+}
+
+.#{$namespace}-icon-audiostatic:before {
+  content: '\e98f';
+}
+
+.#{$namespace}-icon-trademark:before {
+  content: '\e790';
+}
+
+.#{$namespace}-icon-pause:before {
+  content: '\e890';
+}
+
+.#{$namespace}-icon-comment:before {
+  content: '\e990';
+}
+
+.#{$namespace}-icon-time-circle:before {
+  content: '\e791';
+}
+
+.#{$namespace}-icon-bg-colors:before {
+  content: '\e891';
+}
+
+.#{$namespace}-icon-signal-fill:before {
+  content: '\e991';
+}
+
+.#{$namespace}-icon-timeout:before {
+  content: '\e792';
+}
+
+.#{$namespace}-icon-crown:before {
+  content: '\e892';
+}
+
+.#{$namespace}-icon-verified:before {
+  content: '\e992';
+}
+
+.#{$namespace}-icon-earth:before {
+  content: '\e793';
+}
+
+.#{$namespace}-icon-drag:before {
+  content: '\e893';
+}
+
+.#{$namespace}-icon-shortcut-fill:before {
+  content: '\e993';
+}
+
+.#{$namespace}-icon-yuan:before {
+  content: '\e794';
+}
+
+.#{$namespace}-icon-desktop:before {
+  content: '\e894';
+}
+
+.#{$namespace}-icon-videocameraadd:before {
+  content: '\e994';
+}
+
+.#{$namespace}-icon-up-circle:before {
+  content: '\e795';
+}
+
+.#{$namespace}-icon-gift:before {
+  content: '\e895';
+}
+
+.#{$namespace}-icon-switchuser:before {
+  content: '\e995';
+}
+
+.#{$namespace}-icon-warning-circle:before {
+  content: '\e796';
+}
+
+.#{$namespace}-icon-stop:before {
+  content: '\e896';
+}
+
+.#{$namespace}-icon-whatsapp:before {
+  content: '\e996';
+}
+
+.#{$namespace}-icon-sync:before {
+  content: '\e797';
+}
+
+.#{$namespace}-icon-fire:before {
+  content: '\e897';
+}
+
+.#{$namespace}-icon-appstoreadd:before {
+  content: '\e997';
+}
+
+.#{$namespace}-icon-transaction:before {
+  content: '\e798';
+}
+
+.#{$namespace}-icon-thunderbolt:before {
+  content: '\e898';
+}
+
+.#{$namespace}-icon-caret-down:before {
+  content: '\e998';
+}
+
+.#{$namespace}-icon-undo:before {
+  content: '\e799';
+}
+
+.#{$namespace}-icon-check-circle-fill:before {
+  content: '\e899';
+}
+
+.#{$namespace}-icon-backward:before {
+  content: '\e999';
+}
+
+.#{$namespace}-icon-redo:before {
+  content: '\e79a';
+}
+
+.#{$namespace}-icon-left-circle-fill:before {
+  content: '\e89a';
+}
+
+.#{$namespace}-icon-caret-up:before {
+  content: '\e99a';
+}
+
+.#{$namespace}-icon-reload:before {
+  content: '\e79b';
+}
+
+.#{$namespace}-icon-down-circle-fill:before {
+  content: '\e89b';
+}
+
+.#{$namespace}-icon-caret-right:before {
+  content: '\e99b';
+}
+
+.#{$namespace}-icon-reloadtime:before {
+  content: '\e79c';
+}
+
+.#{$namespace}-icon-minus-circle-fill:before {
+  content: '\e89c';
+}
+
+.#{$namespace}-icon-caret-left:before {
+  content: '\e99c';
+}
+
+.#{$namespace}-icon-message:before {
+  content: '\e79d';
+}
+
+.#{$namespace}-icon-close-circle-fill:before {
+  content: '\e89d';
+}
+
+.#{$namespace}-icon-fast-backward:before {
+  content: '\e99d';
+}
+
+.#{$namespace}-icon-dashboard:before {
+  content: '\e79e';
+}
+
+.#{$namespace}-icon-info-circle-fill:before {
+  content: '\e89e';
+}
+
+.#{$namespace}-icon-forward:before {
+  content: '\e99e';
+}
+
+.#{$namespace}-icon-issuesclose:before {
+  content: '\e79f';
+}
+
+.#{$namespace}-icon-up-circle-fill:before {
+  content: '\e89f';
+}
+
+.#{$namespace}-icon-fast-forward:before {
+  content: '\e99f';
+}
+
+.#{$namespace}-icon-poweroff:before {
+  content: '\e7a0';
+}
+
+.#{$namespace}-icon-right-circle-fill:before {
+  content: '\e8a0';
+}
+
+.#{$namespace}-icon-search:before {
+  content: '\e9a0';
+}
+
+.#{$namespace}-icon-logout:before {
+  content: '\e7a1';
+}
+
+.#{$namespace}-icon-plus-circle-fill:before {
+  content: '\e8a1';
+}
+
+.#{$namespace}-icon-retweet:before {
+  content: '\e9a1';
+}
+
+.#{$namespace}-icon-piechart:before {
+  content: '\e7a2';
+}
+
+.#{$namespace}-icon-question-circle-fill:before {
+  content: '\e8a2';
+}
+
+.#{$namespace}-icon-login:before {
+  content: '\e9a2';
+}
+
+.#{$namespace}-icon-setting:before {
+  content: '\e7a3';
+}
+
+.#{$namespace}-icon-euro-circle-fill:before {
+  content: '\e8a3';
+}
+
+.#{$namespace}-icon-step-backward:before {
+  content: '\e9a3';
+}
+
+.#{$namespace}-icon-eye:before {
+  content: '\e7a4';
+}
+
+.#{$namespace}-icon-frown-fill:before {
+  content: '\e8a4';
+}
+
+.#{$namespace}-icon-step-forward:before {
+  content: '\e9a4';
+}
+
+.#{$namespace}-icon-location:before {
+  content: '\e7a5';
+}
+
+.#{$namespace}-icon-copyright-circle-fil:before {
+  content: '\e8a5';
+}
+
+.#{$namespace}-icon-swap-right:before {
+  content: '\e9a5';
+}
+
+.#{$namespace}-icon-edit-square:before {
+  content: '\e7a6';
+}
+
+.#{$namespace}-icon-ci-circle-fill:before {
+  content: '\e8a6';
+}
+
+.#{$namespace}-icon-swap-left:before {
+  content: '\e9a6';
+}
+
+.#{$namespace}-icon-export:before {
+  content: '\e7a7';
+}
+
+.#{$namespace}-icon-compass-fill:before {
+  content: '\e8a7';
+}
+
+.#{$namespace}-icon-woman:before {
+  content: '\e9a7';
+}
+
+.#{$namespace}-icon-save:before {
+  content: '\e7a8';
+}
+
+.#{$namespace}-icon-dollar-circle-fill:before {
+  content: '\e8a8';
+}
+
+.#{$namespace}-icon-plus:before {
+  content: '\e9a8';
+}
+
+.#{$namespace}-icon-import:before {
+  content: '\e7a9';
+}
+
+.#{$namespace}-icon-poweroff-circle-fill:before {
+  content: '\e8a9';
+}
+
+.#{$namespace}-icon-eyeclose-fill:before {
+  content: '\e9a9';
+}
+
+.#{$namespace}-icon-appstore:before {
+  content: '\e7aa';
+}
+
+.#{$namespace}-icon-meh-fill:before {
+  content: '\e8aa';
+}
+
+.#{$namespace}-icon-eye-close:before {
+  content: '\e9aa';
+}
+
+.#{$namespace}-icon-close-square:before {
+  content: '\e7ab';
+}
+
+.#{$namespace}-icon-play-circle-fill:before {
+  content: '\e8ab';
+}
+
+.#{$namespace}-icon-clear:before {
+  content: '\e9ab';
+}
+
+.#{$namespace}-icon-down-square:before {
+  content: '\e7ac';
+}
+
+.#{$namespace}-icon-pound-circle-fill:before {
+  content: '\e8ac';
+}
+
+.#{$namespace}-icon-collapse:before {
+  content: '\e9ac';
+}
+
+.#{$namespace}-icon-layout:before {
+  content: '\e7ad';
+}
+
+.#{$namespace}-icon-smile-fill:before {
+  content: '\e8ad';
+}
+
+.#{$namespace}-icon-expand:before {
+  content: '\e9ad';
+}
+
+.#{$namespace}-icon-left-square:before {
+  content: '\e7ae';
+}
+
+.#{$namespace}-icon-stop-fill:before {
+  content: '\e8ae';
+}
+
+.#{$namespace}-icon-deletecolumn:before {
+  content: '\e9ae';
+}
+
+.#{$namespace}-icon-play-square:before {
+  content: '\e7af';
+}
+
+.#{$namespace}-icon-warning-circle-fill:before {
+  content: '\e8af';
+}
+
+.#{$namespace}-icon-merge-cells:before {
+  content: '\e9af';
+}
+
+.#{$namespace}-icon-control:before {
+  content: '\e7b0';
+}
+
+.#{$namespace}-icon-time-circle-fill:before {
+  content: '\e8b0';
+}
+
+.#{$namespace}-icon-subnode:before {
+  content: '\e9b0';
+}
+
+.#{$namespace}-icon-codelibrary:before {
+  content: '\e7b1';
+}
+
+.#{$namespace}-icon-trademark-circle-fil:before {
+  content: '\e8b1';
+}
+
+.#{$namespace}-icon-rotate-left:before {
+  content: '\e9b1';
+}
+
+.#{$namespace}-icon-detail:before {
+  content: '\e7b2';
+}
+
+.#{$namespace}-icon-yuan-circle-fill:before {
+  content: '\e8b2';
+}
+
+.#{$namespace}-icon-rotate-right:before {
+  content: '\e9b2';
+}
+
+.#{$namespace}-icon-minus-square:before {
+  content: '\e7b3';
+}
+
+.#{$namespace}-icon-heart-fill:before {
+  content: '\e8b3';
+}
+
+.#{$namespace}-icon-insertrowbelow:before {
+  content: '\e9b3';
+}
+
+.#{$namespace}-icon-plus-square:before {
+  content: '\e7b4';
+}
+
+.#{$namespace}-icon-piechart-circle-fil:before {
+  content: '\e8b4';
+}
+
+.#{$namespace}-icon-insertrowabove:before {
+  content: '\e9b4';
+}
+
+.#{$namespace}-icon-right-square:before {
+  content: '\e7b5';
+}
+
+.#{$namespace}-icon-dashboard-fill:before {
+  content: '\e8b5';
+}
+
+.#{$namespace}-icon-table1:before {
+  content: '\e9b5';
+}
+
+.#{$namespace}-icon-project:before {
+  content: '\e7b6';
+}
+
+.#{$namespace}-icon-message-fill:before {
+  content: '\e8b6';
+}
+
+.#{$namespace}-icon-solit-cells:before {
+  content: '\e9b6';
+}
+
+.#{$namespace}-icon-wallet:before {
+  content: '\e7b7';
+}
+
+.#{$namespace}-icon-check-square-fill:before {
+  content: '\e8b7';
+}
+
+.#{$namespace}-icon-formatpainter:before {
+  content: '\e9b7';
+}
+
+.#{$namespace}-icon-up-square:before {
+  content: '\e7b8';
+}
+
+.#{$namespace}-icon-down-square-fill:before {
+  content: '\e8b8';
+}
+
+.#{$namespace}-icon-insertrowright:before {
+  content: '\e9b8';
+}
+
+.#{$namespace}-icon-calculator:before {
+  content: '\e7b9';
+}
+
+.#{$namespace}-icon-minus-square-fill:before {
+  content: '\e8b9';
+}
+
+.#{$namespace}-icon-formatpainter-fill:before {
+  content: '\e9b9';
+}
+
+.#{$namespace}-icon-interation:before {
+  content: '\e7ba';
+}
+
+.#{$namespace}-icon-close-square-fill:before {
+  content: '\e8ba';
+}
+
+.#{$namespace}-icon-insertrowleft:before {
+  content: '\e9ba';
+}
+
+.#{$namespace}-icon-check-square:before {
+  content: '\e7bb';
+}
+
+.#{$namespace}-icon-codelibrary-fill:before {
+  content: '\e8bb';
+}
+
+.#{$namespace}-icon-translate:before {
+  content: '\e9bb';
+}
+
+.#{$namespace}-icon-border:before {
+  content: '\e7bc';
+}
+
+.#{$namespace}-icon-left-square-fill:before {
+  content: '\e8bc';
+}
+
+.#{$namespace}-icon-deleterow:before {
+  content: '\e9bc';
+}
+
+.#{$namespace}-icon-border-outer:before {
+  content: '\e7bd';
+}
+
+.#{$namespace}-icon-play-square-fill:before {
+  content: '\e8bd';
+}
+
+.#{$namespace}-icon-sisternode:before {
+  content: '\e9bd';
+}
+
+.#{$namespace}-icon-border-top:before {
+  content: '\e7be';
+}
+
+.#{$namespace}-icon-up-square-fill:before {
+  content: '\e8be';
+}
+
+.#{$namespace}-icon-field-number:before {
+  content: '\e9be';
+}
+
+.#{$namespace}-icon-border-bottom:before {
+  content: '\e7bf';
+}
+
+.#{$namespace}-icon-right-square-fill:before {
+  content: '\e8bf';
+}
+
+.#{$namespace}-icon-field-string:before {
+  content: '\e9bf';
+}
+
+.#{$namespace}-icon-border-left:before {
+  content: '\e7c0';
+}
+
+.#{$namespace}-icon-plus-square-fill:before {
+  content: '\e8c0';
+}
+
+.#{$namespace}-icon-function:before {
+  content: '\e9c0';
+}
+
+.#{$namespace}-icon-border-right:before {
+  content: '\e7c1';
+}
+
+.#{$namespace}-icon-accountbook-fill:before {
+  content: '\e8c1';
+}
+
+.#{$namespace}-icon-field-time:before {
+  content: '\e9c1';
+}
+
+.#{$namespace}-icon-border-inner:before {
+  content: '\e7c2';
+}
+
+.#{$namespace}-icon-carryout-fill:before {
+  content: '\e8c2';
+}
+
+.#{$namespace}-icon-gif:before {
+  content: '\e9c2';
+}
+
+.#{$namespace}-icon-border-verticle:before {
+  content: '\e7c3';
+}
+
+.#{$namespace}-icon-calendar-fill:before {
+  content: '\e8c3';
+}
+
+.#{$namespace}-icon-partition:before {
+  content: '\e9c3';
+}
+
+.#{$namespace}-icon-border-horizontal:before {
+  content: '\e7c4';
+}
+
+.#{$namespace}-icon-calculator-fill:before {
+  content: '\e8c4';
+}
+
+.#{$namespace}-icon-index:before {
+  content: '\e9c4';
+}
+
+.#{$namespace}-icon-radius-bottomleft:before {
+  content: '\e7c5';
+}
+
+.#{$namespace}-icon-interation-fill:before {
+  content: '\e8c5';
+}
+
+.#{$namespace}-icon-storedprocedure:before {
+  content: '\e9c5';
+}
+
+.#{$namespace}-icon-radius-bottomright:before {
+  content: '\e7c6';
+}
+
+.#{$namespace}-icon-project-fill:before {
+  content: '\e8c6';
+}
+
+.#{$namespace}-icon-field-binary:before {
+  content: '\e9c6';
+}
+
+.#{$namespace}-icon-radius-upleft:before {
+  content: '\e7c7';
+}
+
+.#{$namespace}-icon-detail-fill:before {
+  content: '\e8c7';
+}
+
+.#{$namespace}-icon-console-sql:before {
+  content: '\e9c7';
+}
+
+.#{$namespace}-icon-radius-upright:before {
+  content: '\e7c8';
+}
+
+.#{$namespace}-icon-save-fill:before {
+  content: '\e8c8';
+}
+
+.#{$namespace}-icon-icon-test:before {
+  content: '\e9c8';
+}
+
+.#{$namespace}-icon-radius-setting:before {
+  content: '\e7c9';
+}
+
+.#{$namespace}-icon-wallet-fill:before {
+  content: '\e8c9';
+}
+
+.#{$namespace}-icon-aim:before {
+  content: '\e9c9';
+}
+
+.#{$namespace}-icon-adduser:before {
+  content: '\e7ca';
+}
+
+.#{$namespace}-icon-control-fill:before {
+  content: '\e8ca';
+}
+
+.#{$namespace}-icon-compress:before {
+  content: '\e9ca';
+}
+
+.#{$namespace}-icon-deleteteam:before {
+  content: '\e7cb';
+}
+
+.#{$namespace}-icon-layout-fill:before {
+  content: '\e8cb';
+}
+
+.#{$namespace}-icon-expend:before {
+  content: '\e9cb';
+}
+
+.#{$namespace}-icon-deleteuser:before {
+  content: '\e7cc';
+}
+
+.#{$namespace}-icon-appstore-fill:before {
+  content: '\e8cc';
+}
+
+.#{$namespace}-icon-folder-view:before {
+  content: '\e9cc';
+}
+
+.#{$namespace}-icon-addteam:before {
+  content: '\e7cd';
+}
+
+.#{$namespace}-icon-mobile-fill:before {
+  content: '\e8cd';
+}
+
+.#{$namespace}-icon-file-gif:before {
+  content: '\e9cd';
+}
+
+.#{$namespace}-icon-user:before {
+  content: '\e7ce';
+}
+
+.#{$namespace}-icon-tablet-fill:before {
+  content: '\e8ce';
+}
+
+.#{$namespace}-icon-group:before {
+  content: '\e9ce';
+}
+
+.#{$namespace}-icon-team:before {
+  content: '\e7cf';
+}
+
+.#{$namespace}-icon-book-fill:before {
+  content: '\e8cf';
+}
+
+.#{$namespace}-icon-send:before {
+  content: '\e9cf';
+}
+
+.#{$namespace}-icon-areachart:before {
+  content: '\e7d0';
+}
+
+.#{$namespace}-icon-redenvelope-fill:before {
+  content: '\e8d0';
+}
+
+.#{$namespace}-icon-report:before {
+  content: '\e9d0';
+}
+
+.#{$namespace}-icon-linechart:before {
+  content: '\e7d1';
+}
+
+.#{$namespace}-icon-safetycertificate-f:before {
+  content: '\e8d1';
+}
+
+.#{$namespace}-icon-view:before {
+  content: '\e9d1';
+}
+
+.#{$namespace}-icon-barchart:before {
+  content: '\e7d2';
+}
+
+.#{$namespace}-icon-propertysafety-fill:before {
+  content: '\e8d2';
+}
+
+.#{$namespace}-icon-shortcut:before {
+  content: '\e9d2';
+}
+
+.#{$namespace}-icon-pointmap:before {
+  content: '\e7d3';
+}
+
+.#{$namespace}-icon-insurance-fill:before {
+  content: '\e8d3';
+}
+
+.#{$namespace}-icon-ungroup:before {
+  content: '\e9d3';
+}
+
+.#{$namespace}-icon-container:before {
+  content: '\e7d4';
+}
+
+.#{$namespace}-icon-securityscan-fill:before {
+  content: '\e8d4';
+}
+
+.#{$namespace}-icon-database:before {
+  content: '\e7d5';
+}
+
+.#{$namespace}-icon-file-exclamation-fil:before {
+  content: '\e8d5';
+}
+
+.#{$namespace}-icon-sever:before {
+  content: '\e7d6';
+}
+
+.#{$namespace}-icon-file-add-fill:before {
+  content: '\e8d6';
+}
+
+.#{$namespace}-icon-mobile:before {
+  content: '\e7d7';
+}
+
+.#{$namespace}-icon-file-fill:before {
+  content: '\e8d7';
+}
+
+.#{$namespace}-icon-tablet:before {
+  content: '\e7d8';
+}
+
+.#{$namespace}-icon-file-excel-fill:before {
+  content: '\e8d8';
+}
+
+.#{$namespace}-icon-redenvelope:before {
+  content: '\e7d9';
+}
+
+.#{$namespace}-icon-file-markdown-fill:before {
+  content: '\e8d9';
+}
+
+.#{$namespace}-icon-book:before {
+  content: '\e7da';
+}
+
+.#{$namespace}-icon-file-text-fill:before {
+  content: '\e8da';
+}
+
+.#{$namespace}-icon-filedone:before {
+  content: '\e7db';
+}
+
+.#{$namespace}-icon-file-ppt-fill:before {
+  content: '\e8db';
+}
+
+.#{$namespace}-icon-reconciliation:before {
+  content: '\e7dc';
+}
+
+.#{$namespace}-icon-file-unknown-fill:before {
+  content: '\e8dc';
+}
+
+.#{$namespace}-icon-file-exception:before {
+  content: '\e7dd';
+}
+
+.#{$namespace}-icon-file-word-fill:before {
+  content: '\e8dd';
+}
+
+.#{$namespace}-icon-filesync:before {
+  content: '\e7de';
+}
+
+.#{$namespace}-icon-file-zip-fill:before {
+  content: '\e8de';
+}
+
+.#{$namespace}-icon-filesearch:before {
+  content: '\e7df';
+}
+
+.#{$namespace}-icon-file-pdf-fill:before {
+  content: '\e8df';
+}
+
+.#{$namespace}-icon-solution:before {
+  content: '\e7e0';
+}
+
+.#{$namespace}-icon-file-image-fill:before {
+  content: '\e8e0';
+}
+
+.#{$namespace}-icon-fileprotect:before {
+  content: '\e7e1';
+}
+
+.#{$namespace}-icon-diff-fill:before {
+  content: '\e8e1';
+}
+
+.#{$namespace}-icon-file-add:before {
+  content: '\e7e2';
+}
+
+.#{$namespace}-icon-file-copy-fill:before {
+  content: '\e8e2';
+}
+
+.#{$namespace}-icon-file-excel:before {
+  content: '\e7e3';
+}
+
+.#{$namespace}-icon-snippets-fill:before {
+  content: '\e8e3';
+}
+
+.#{$namespace}-icon-file-exclamation:before {
+  content: '\e7e4';
+}
+
+.#{$namespace}-icon-batchfolding-fill:before {
+  content: '\e8e4';
+}
+
+.#{$namespace}-icon-file-pdf:before {
+  content: '\e7e5';
+}
+
+.#{$namespace}-icon-reconciliation-fill:before {
+  content: '\e8e5';
+}
+
+.#{$namespace}-icon-file-image:before {
+  content: '\e7e6';
+}
+
+.#{$namespace}-icon-folder-add-fill:before {
+  content: '\e8e6';
+}
+
+.#{$namespace}-icon-file-markdown:before {
+  content: '\e7e7';
+}
+
+.#{$namespace}-icon-folder-fill:before {
+  content: '\e8e7';
+}
+
+.#{$namespace}-icon-file-unknown:before {
+  content: '\e7e8';
+}
+
+.#{$namespace}-icon-folder-open-fill:before {
+  content: '\e8e8';
+}
+
+.#{$namespace}-icon-file-ppt:before {
+  content: '\e7e9';
+}
+
+.#{$namespace}-icon-database-fill:before {
+  content: '\e8e9';
+}
+
+.#{$namespace}-icon-file-word:before {
+  content: '\e7ea';
+}
+
+.#{$namespace}-icon-container-fill:before {
+  content: '\e8ea';
+}
+
+.#{$namespace}-icon-file:before {
+  content: '\e7eb';
+}
+
+.#{$namespace}-icon-sever-fill:before {
+  content: '\e8eb';
+}
+
+.#{$namespace}-icon-file-zip:before {
+  content: '\e7ec';
+}
+
+.#{$namespace}-icon-calendar-check-fill:before {
+  content: '\e8ec';
+}
+
+.#{$namespace}-icon-file-text:before {
+  content: '\e7ed';
+}
+
+.#{$namespace}-icon-image-fill:before {
+  content: '\e8ed';
+}
+
+.#{$namespace}-icon-file-copy:before {
+  content: '\e7ee';
+}
+
+.#{$namespace}-icon-idcard-fill:before {
+  content: '\e8ee';
+}
+
+.#{$namespace}-icon-snippets:before {
+  content: '\e7ef';
+}
+
+.#{$namespace}-icon-creditcard-fill:before {
+  content: '\e8ef';
+}
+
+.#{$namespace}-icon-audit:before {
+  content: '\e7f0';
+}
+
+.#{$namespace}-icon-fund-fill:before {
+  content: '\e8f0';
+}
+
+.#{$namespace}-icon-diff:before {
+  content: '\e7f1';
+}
+
+.#{$namespace}-icon-read-fill:before {
+  content: '\e8f1';
+}
+
+.#{$namespace}-icon-batchfolding:before {
+  content: '\e7f2';
+}
+
+.#{$namespace}-icon-contacts-fill:before {
+  content: '\e8f2';
+}
+
+.#{$namespace}-icon-securityscan:before {
+  content: '\e7f3';
+}
+
+.#{$namespace}-icon-delete-fill:before {
+  content: '\e8f3';
+}
+
+.#{$namespace}-icon-propertysafety:before {
+  content: '\e7f4';
+}
+
+.#{$namespace}-icon-notification-fill:before {
+  content: '\e8f4';
+}
+
+.#{$namespace}-icon-safetycertificate:before {
+  content: '\e7f5';
+}
+
+.#{$namespace}-icon-flag-fill:before {
+  content: '\e8f5';
+}
+
+.#{$namespace}-icon-insurance:before {
+  content: '\e7f6';
+}
+
+.#{$namespace}-icon-moneycollect-fill:before {
+  content: '\e8f6';
+}
+
+.#{$namespace}-icon-alert:before {
+  content: '\e7f7';
+}
+
+.#{$namespace}-icon-medicinebox-fill:before {
+  content: '\e8f7';
+}
+
+.#{$namespace}-icon-delete:before {
+  content: '\e7f8';
+}
+
+.#{$namespace}-icon-rest-fill:before {
+  content: '\e8f8';
+}
+
+.#{$namespace}-icon-hourglass:before {
+  content: '\e7f9';
+}
+
+.#{$namespace}-icon-shopping-fill:before {
+  content: '\e8f9';
+}
+
+.#{$namespace}-icon-bulb:before {
+  content: '\e7fa';
+}
+
+.#{$namespace}-icon-skin-fill:before {
+  content: '\e8fa';
+}
+
+.#{$namespace}-icon-experiment:before {
+  content: '\e7fb';
+}
+
+.#{$namespace}-icon-video-fill:before {
+  content: '\e8fb';
+}
+
+.#{$namespace}-icon-bell:before {
+  content: '\e7fc';
+}
+
+.#{$namespace}-icon-sound-fill:before {
+  content: '\e8fc';
+}
+
+.#{$namespace}-icon-trophy:before {
+  content: '\e7fd';
+}
+
+.#{$namespace}-icon-bulb-fill:before {
+  content: '\e8fd';
+}
+
+.#{$namespace}-icon-rest:before {
+  content: '\e7fe';
+}
+
+.#{$namespace}-icon-bell-fill:before {
+  content: '\e8fe';
+}
+
+.#{$namespace}-icon-usb:before {
+  content: '\e7ff';
+}
+
+.#{$namespace}-icon-filter-fill:before {
+  content: '\e8ff';
+}
+
+.#{$namespace}-icon-skin:before {
+  content: '\e800';
+}
+
+.#{$namespace}-icon-fire-fill:before {
+  content: '\e900';
+}
+
+.#{$namespace}-icon-home:before {
+  content: '\e801';
+}
+
+.#{$namespace}-icon-funnelplot-fill:before {
+  content: '\e901';
+}
+
+.#{$namespace}-icon-bank:before {
+  content: '\e802';
+}
+
+.#{$namespace}-icon-gift-fill:before {
+  content: '\e902';
+}
+
+.#{$namespace}-icon-filter:before {
+  content: '\e803';
+}
+
+.#{$namespace}-icon-hourglass-fill:before {
+  content: '\e903';
+}
+
+.#{$namespace}-icon-funnelplot:before {
+  content: '\e804';
+}
+
+.#{$namespace}-icon-home-fill:before {
+  content: '\e904';
+}
+
+.#{$namespace}-icon-like:before {
+  content: '\e805';
+}
+
+.#{$namespace}-icon-trophy-fill:before {
+  content: '\e905';
+}
+
+.#{$namespace}-icon-unlike:before {
+  content: '\e806';
+}
+
+.#{$namespace}-icon-location-fill:before {
+  content: '\e906';
+}
+
+.#{$namespace}-icon-unlock:before {
+  content: '\e807';
+}
+
+.#{$namespace}-icon-cloud-fill:before {
+  content: '\e907';
+}
+
+.#{$namespace}-icon-lock:before {
+  content: '\e808';
+}
+
+.#{$namespace}-icon-customerservice-fill:before {
+  content: '\e908';
+}
+
+.#{$namespace}-icon-customerservice:before {
+  content: '\e809';
+}
+
+.#{$namespace}-icon-experiment-fill:before {
+  content: '\e909';
+}
+
+.#{$namespace}-icon-flag:before {
+  content: '\e80a';
+}
+
+.#{$namespace}-icon-eye-fill:before {
+  content: '\e90a';
+}
+
+.#{$namespace}-icon-moneycollect:before {
+  content: '\e80b';
+}
+
+.#{$namespace}-icon-like-fill:before {
+  content: '\e90b';
+}
+
+.#{$namespace}-icon-medicinebox:before {
+  content: '\e80c';
+}
+
+.#{$namespace}-icon-lock-fill:before {
+  content: '\e90c';
+}
+
+.#{$namespace}-icon-shop:before {
+  content: '\e80d';
+}
+
+.#{$namespace}-icon-unlike-fill:before {
+  content: '\e90d';
+}
+
+.#{$namespace}-icon-rocket:before {
+  content: '\e80e';
+}
+
+.#{$namespace}-icon-star-fill:before {
+  content: '\e90e';
+}
+
+.#{$namespace}-icon-shopping:before {
+  content: '\e80f';
+}
+
+.#{$namespace}-icon-unlock-fill:before {
+  content: '\e90f';
+}
+
+.#{$namespace}-icon-folder:before {
+  content: '\e810';
+}
+
+.#{$namespace}-icon-alert-fill:before {
+  content: '\e910';
+}
+
+.#{$namespace}-icon-folder-open:before {
+  content: '\e811';
+}
+
+.#{$namespace}-icon-api-fill:before {
+  content: '\e911';
+}
+
+.#{$namespace}-icon-folder-add:before {
+  content: '\e812';
+}
+
+.#{$namespace}-icon-highlight-fill:before {
+  content: '\e912';
+}
+
+.#{$namespace}-icon-deploymentunit:before {
+  content: '\e813';
+}
+
+.#{$namespace}-icon-phone-fill:before {
+  content: '\e913';
+}
+
+.#{$namespace}-icon-accountbook:before {
+  content: '\e814';
+}
+
+.#{$namespace}-icon-edit-fill:before {
+  content: '\e914';
+}
+
+.#{$namespace}-icon-contacts:before {
+  content: '\e815';
+}
+
+.#{$namespace}-icon-pushpin-fill:before {
+  content: '\e915';
+}
+
+.#{$namespace}-icon-carryout:before {
+  content: '\e816';
+}
+
+.#{$namespace}-icon-rocket-fill:before {
+  content: '\e916';
+}
+
+.#{$namespace}-icon-calendar-check:before {
+  content: '\e817';
+}
+
+.#{$namespace}-icon-thunderbolt-fill:before {
+  content: '\e917';
+}
+
+.#{$namespace}-icon-calendar:before {
+  content: '\e818';
+}
+
+.#{$namespace}-icon-tag-fill:before {
+  content: '\e918';
+}
+
+.#{$namespace}-icon-scan:before {
+  content: '\e819';
+}
+
+.#{$namespace}-icon-wrench-fill:before {
+  content: '\e919';
+}
+
+.#{$namespace}-icon-select:before {
+  content: '\e81a';
+}
+
+.#{$namespace}-icon-tags-fill:before {
+  content: '\e91a';
+}
+
+.#{$namespace}-icon-boxplot:before {
+  content: '\e81b';
+}
+
+.#{$namespace}-icon-bank-fill:before {
+  content: '\e91b';
+}
+
+.#{$namespace}-icon-build:before {
+  content: '\e81c';
+}
+
+.#{$namespace}-icon-camera-fill:before {
+  content: '\e91c';
+}
+
+.#{$namespace}-icon-sliders:before {
+  content: '\e81d';
+}
+
+.#{$namespace}-icon-error-fill:before {
+  content: '\e91d';
+}
+
+.#{$namespace}-icon-laptop:before {
+  content: '\e81e';
+}
+
+.#{$namespace}-icon-crown-fill:before {
+  content: '\e91e';
+}
+
+.#{$namespace}-icon-barcode:before {
+  content: '\e81f';
+}
+
+.#{$namespace}-icon-mail-fill:before {
+  content: '\e91f';
+}
+
+.#{$namespace}-icon-camera:before {
+  content: '\e820';
+}
+
+.#{$namespace}-icon-car-fill:before {
+  content: '\e920';
+}
+
+.#{$namespace}-icon-cluster:before {
+  content: '\e821';
+}
+
+.#{$namespace}-icon-printer-fill:before {
+  content: '\e921';
+}
+
+.#{$namespace}-icon-gateway:before {
+  content: '\e822';
+}
+
+.#{$namespace}-icon-shop-fill:before {
+  content: '\e922';
+}
+
+.#{$namespace}-icon-car:before {
+  content: '\e823';
+}
+
+.#{$namespace}-icon-setting-fill:before {
+  content: '\e923';
+}
+
+.#{$namespace}-icon-printer:before {
+  content: '\e824';
+}
+
+.#{$namespace}-icon-usb-fill:before {
+  content: '\e924';
+}
+
+.#{$namespace}-icon-read:before {
+  content: '\e825';
+}
+
+.#{$namespace}-icon-golden-fill:before {
+  content: '\e925';
+}
+
+.#{$namespace}-icon-cloud-server:before {
+  content: '\e826';
+}
+
+.#{$namespace}-icon-build-fill:before {
+  content: '\e926';
+}
+
+.#{$namespace}-icon-cloud-upload:before {
+  content: '\e827';
+}
+
+.#{$namespace}-icon-boxplot-fill:before {
+  content: '\e927';
+}
+
+.#{$namespace}-icon-cloud:before {
+  content: '\e828';
+}
+
+.#{$namespace}-icon-sliders-fill:before {
+  content: '\e928';
+}
+
+.#{$namespace}-icon-cloud-download:before {
+  content: '\e829';
+}
+
+.#{$namespace}-icon-alibaba:before {
+  content: '\e929';
+}
+
+.#{$namespace}-icon-cloud-sync:before {
+  content: '\e82a';
+}
+
+.#{$namespace}-icon-antdesign:before {
+  content: '\e92a';
+}
+
+.#{$namespace}-icon-video:before {
+  content: '\e82b';
+}
+
+.#{$namespace}-icon-ant-cloud:before {
+  content: '\e92b';
+}
+
+.#{$namespace}-icon-notification:before {
+  content: '\e82c';
+}
+
+.#{$namespace}-icon-behance:before {
+  content: '\e92c';
+}
+
+.#{$namespace}-icon-sound:before {
+  content: '\e82d';
+}
+
+.#{$namespace}-icon-googleplus:before {
+  content: '\e92d';
+}
+
+.#{$namespace}-icon-radarchart:before {
+  content: '\e82e';
+}
+
+.#{$namespace}-icon-medium:before {
+  content: '\e92e';
+}
+
+.#{$namespace}-icon-qrcode:before {
+  content: '\e82f';
+}
+
+.#{$namespace}-icon-google:before {
+  content: '\e92f';
+}
+
+.#{$namespace}-icon-fund:before {
+  content: '\e830';
+}
+
+.#{$namespace}-icon-ie:before {
+  content: '\e930';
+}
+
+.#{$namespace}-icon-image:before {
+  content: '\e831';
+}
+
+.#{$namespace}-icon-amazon:before {
+  content: '\e931';
+}
+
+.#{$namespace}-icon-mail:before {
+  content: '\e832';
+}
+
+.#{$namespace}-icon-slack:before {
+  content: '\e932';
+}
+
+.#{$namespace}-icon-table:before {
+  content: '\e833';
+}
+
+.#{$namespace}-icon-alipay:before {
+  content: '\e933';
+}
+
+.#{$namespace}-icon-idcard:before {
+  content: '\e834';
+}
+
+.#{$namespace}-icon-taobao:before {
+  content: '\e934';
+}
+
+.#{$namespace}-icon-creditcard:before {
+  content: '\e835';
+}
+
+.#{$namespace}-icon-zhihu:before {
+  content: '\e935';
+}
+
+.#{$namespace}-icon-heart:before {
+  content: '\e836';
+}
+
+.#{$namespace}-icon-html:before {
+  content: '\e936';
+}
+
+.#{$namespace}-icon-block:before {
+  content: '\e837';
+}
+
+.#{$namespace}-icon-linkedin:before {
+  content: '\e937';
+}
+
+.#{$namespace}-icon-error:before {
+  content: '\e838';
+}
+
+.#{$namespace}-icon-yahoo:before {
+  content: '\e938';
+}
+
+.#{$namespace}-icon-star:before {
+  content: '\e839';
+}
+
+.#{$namespace}-icon-facebook:before {
+  content: '\e939';
+}
+
+.#{$namespace}-icon-gold:before {
+  content: '\e83a';
+}
+
+.#{$namespace}-icon-skype:before {
+  content: '\e93a';
+}
+
+.#{$namespace}-icon-heatmap:before {
+  content: '\e83b';
+}
+
+.#{$namespace}-icon-codesandbox:before {
+  content: '\e93b';
+}
+
+.#{$namespace}-icon-wifi:before {
+  content: '\e83c';
+}
+
+.#{$namespace}-icon-chrome:before {
+  content: '\e93c';
+}
+
+.#{$namespace}-icon-attachment:before {
+  content: '\e83d';
+}
+
+.#{$namespace}-icon-codepen:before {
+  content: '\e93d';
+}
+
+.#{$namespace}-icon-edit:before {
+  content: '\e83e';
+}
+
+.#{$namespace}-icon-aliwangwang:before {
+  content: '\e93e';
+}
+
+.#{$namespace}-icon-key:before {
+  content: '\e83f';
+}
+
+.#{$namespace}-icon-apple:before {
+  content: '\e93f';
+}
+
+.#{$namespace}-icon-api:before {
+  content: '\e840';
+}
+
+.#{$namespace}-icon-android:before {
+  content: '\e940';
+}
+
+.#{$namespace}-icon-disconnect:before {
+  content: '\e841';
+}
+
+.#{$namespace}-icon-sketch:before {
+  content: '\e941';
+}
+
+.#{$namespace}-icon-highlight:before {
+  content: '\e842';
+}
+
+.#{$namespace}-icon-gitlab:before {
+  content: '\e942';
+}
+
+.#{$namespace}-icon-monitor:before {
+  content: '\e843';
+}
+
+.#{$namespace}-icon-dribbble:before {
+  content: '\e943';
+}
+
+.#{$namespace}-icon-link:before {
+  content: '\e844';
+}
+
+.#{$namespace}-icon-instagram:before {
+  content: '\e944';
+}
+
+.#{$namespace}-icon-man:before {
+  content: '\e845';
+}
+
+.#{$namespace}-icon-reddit:before {
+  content: '\e945';
+}
+
+.#{$namespace}-icon-percentage:before {
+  content: '\e846';
+}
+
+.#{$namespace}-icon-windows:before {
+  content: '\e946';
+}
+
+.#{$namespace}-icon-pushpin:before {
+  content: '\e847';
+}
+
+.#{$namespace}-icon-yuque:before {
+  content: '\e947';
+}
+
+.#{$namespace}-icon-phone:before {
+  content: '\e848';
+}
+
+.#{$namespace}-icon-youtube:before {
+  content: '\e948';
+}
+
+.#{$namespace}-icon-shake:before {
+  content: '\e849';
+}
+
+.#{$namespace}-icon-gitlab-fill:before {
+  content: '\e949';
+}
