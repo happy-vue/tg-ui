@@ -1,13 +1,11 @@
 // 放置组件的props和一些公共的方法
-import type { ExtractPropTypes } from "vue"
-
+import type { ExtractPropTypes } from 'vue';
 export const iconProps = {
   size: {
-    type:Number
+    type: Number,
   },
-  color:{
-    type:String
-  }
-}
-
+  color: {
+    type: String,
+  },
+};
 export type iconProps = ExtractPropTypes<typeof iconProps>;

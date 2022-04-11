@@ -1,3 +1,4 @@
 packages:
   - 'packages/**' # 存放编写的组件库
   - examples # 应用包
+  - 'internal/*' # 构建配置包
