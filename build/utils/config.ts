@@ -1,5 +1,5 @@
-import path from 'path'
-import { outDir } from './paths'
+import path from 'path';
+import { outDir } from './paths';
 
 export const buildConfig = {
   esm: {
@@ -24,6 +24,6 @@ export const buildConfig = {
       path: 'tg-ui/lib',
     },
   },
-}
+};
 
-export type BuildConfig = typeof buildConfig
+export type BuildConfig = typeof buildConfig;

@@ -1,4 +1,4 @@
 // 打包工具方法
-import { buildPackages } from '../../build/packages'
+import { buildPackages } from '../../build/packages';
 
-export default buildPackages(__dirname, 'utils')
+export default buildPackages(__dirname, 'utils');

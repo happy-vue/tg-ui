@@ -1,3 +1,12 @@
 // 命名空间
 $namespace: 'tg';
-// 命名规范 BEM规范
+
+/**
+* 命名规范 BEM规范
+
+<div class="z-cell">
+    <div class="z-cell__label"></div>
+    <div class="z-cell__value is_check"></div>
+</div>
+
+*/
