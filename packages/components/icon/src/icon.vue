@@ -7,7 +7,6 @@
 <script lang="ts">
 import { computed, defineComponent } from 'vue';
 import { iconProps } from './icon';
-
 export default defineComponent({
   name: 'TgIcon',
   props: iconProps,

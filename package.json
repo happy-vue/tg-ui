@@ -16,9 +16,6 @@
     "lint": "eslint . --ext .vue,.js,.ts,.jsx,.tsx,.json --max-warnings 0 && pretty-quick --check dev",
     "lint:fix": "eslint --fix . --ext .vue,.js,.ts,.jsx,.tsx,.json"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
   "dependencies": {
     "@tg-ui/components": "workspace:^1.0.0",
     "@tg-ui/eslint-config": "workspace:^1.0.0",

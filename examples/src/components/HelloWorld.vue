@@ -39,7 +39,7 @@ a {
 }
 
 label {
-  margin: 0 0.5em;
+  margin: 0 .5em;
   font-weight: bold;
 }
 
@@ -49,4 +49,5 @@ code {
   border-radius: 4px;
   color: #304455;
 }
+
 </style>
