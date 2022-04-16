@@ -1,13 +1,13 @@
 // 放置组件的props和一些公共的方法
-import type { ExtractPropTypes } from "vue"
-
+import type { ExtractPropTypes } from 'vue';
+//  as const，会让对象的每个属性变成只读（readonly）
 export const iconProps = {
   size: {
-    type:Number
+    type: Number,
   },
-  color:{
-    type:String
-  }
-}
+  color: {
+    type: String,
+  },
+};
 
-export type iconProps = ExtractPropTypes<typeof iconProps>;
+export type IconProps = ExtractPropTypes<typeof iconProps>;

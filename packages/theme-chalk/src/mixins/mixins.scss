@@ -1,4 +1,11 @@
 // 声明公共的sass方法
 
+/*
+* 引入config
+*/
 @use 'config' as *;
+
+/*
+* 将config暴露给全局使用
+*/
 @forward 'config';
