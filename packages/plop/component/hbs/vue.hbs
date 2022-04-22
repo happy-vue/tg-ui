@@ -4,6 +4,17 @@
   </div>
 </template>
 
-<script src="./{{name}}.ts"></script>
+<script lang="ts" setup>
+  import { computed, ref, watch } from 'vue'
+  import { {{camelName}}Emits, {{camelName}}Props } from './{{camelName}}'
+
+  defineOptions({
+    name: '{{prefixName}}',
+  })
+
+  const props = defineProps({{camelName}}Props)
+  const emit = defineEmits({{camelName}}Emits)
+
+</script>
 
 <style lang="less" scoped src="./{{name}}.less"></style>

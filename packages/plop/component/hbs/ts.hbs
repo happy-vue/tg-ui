@@ -1,9 +1,20 @@
-import { reactive, defineComponent } from "vue";
-export default defineComponent({
-  name:"{{componentName}}",
-  setup() {
-    const state = reactive({});
+import { buildProps, definePropType } from '@tg-ui/utils'
+import type { ExtractPropTypes } from 'vue'
+import type {{pascalName}} from './{{name}}.vue'
 
-    return state;
+export const {{camelName}}Props = buildProps({
+  prop: {
+    type: String,
+    default: '',
   },
-});
+} as const)
+
+export type {{pascalName}}Props = ExtractPropTypes<typeof {{camelName}}Props>
+
+export const {{camelName}}Emits = {
+  error: (evt: Event) => evt instanceof Event,
+}
+
+export type {{pascalName}}Emits = typeof {{camelName}}Emits
+
+export type {{pascalName}}Instance = InstanceType<typeof {{pascalName}}>

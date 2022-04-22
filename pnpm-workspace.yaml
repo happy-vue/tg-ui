@@ -3,3 +3,4 @@ packages:
   - 'internal/*' # 构建配置包
   - examples # 应用案例
   - docs # 项目文档
+  - plop # 构建脚手架
