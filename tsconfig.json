@@ -3,9 +3,16 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-      "~/*": ["./*"],
-      "@/*": ["./src/*"]
-    }
+      "~/*": [
+        "./*"
+      ],
+      "@/*": [
+        "./src/*"
+      ]
+    },
+    "types": [
+      "unplugin-vue-define-options"
+    ]
   },
   "include": [
     "examples/**/*.ts",
@@ -19,5 +26,10 @@
     "typings/**/*.ts",
     "typings/**/*.d.ts"
   ],
-  "exclude": ["node_module", "**/__tests__", "dist/**", "packages/tg-ui/**"]
+  "exclude": [
+    "node_module",
+    "**/__tests__",
+    "dist/**",
+    "packages/tg-ui/**"
+  ]
 }
