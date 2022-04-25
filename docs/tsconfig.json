@@ -3,12 +3,12 @@
     "outDir": "dist",
     "target": "esnext",
     "module": "esnext",
+    "jsx": "preserve",
     "moduleResolution": "node",
     "esModuleInterop": true,
     "resolveJsonModule": true,
     "allowJs": true,
     "strict": true,
-    "jsx": "preserve",
     "baseUrl": ".",
     "paths": {
       "/@theme/*": [

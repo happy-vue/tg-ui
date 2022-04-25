@@ -1,9 +1,3 @@
-.vitepress/i18n/*
-.vitepress/crowdin/*
-!.vitepress/crowdin/en-US
-
-temp
-fr-FR
-es-ES
-ja-JP
-en-US
+dist
+node_modules
+components.d.ts

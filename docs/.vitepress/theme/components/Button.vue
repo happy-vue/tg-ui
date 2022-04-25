@@ -1,17 +1,17 @@
+<script setup lang="ts">
+defineProps<{
+  link: string;
+}>();
+</script>
+
 <template>
-  <a class="hbs-link-button" :href="link" target="_blank">
+  <a class="link-button" :href="link" target="_blank">
     <slot />
   </a>
 </template>
 
-<script setup lang="ts">
-defineProps<{
-  link: string
-}>()
-</script>
-
 <style scoped>
-.hbs-link-button {
+.link-button {
   display: inline-block;
   padding: 4px 12px;
   background-color: var(--vt-c-green);
@@ -20,19 +20,20 @@ defineProps<{
   font-weight: 500;
   border-radius: 8px;
   cursor: pointer;
-  transition: background-color 0.5s, color 0.5s;
+  transition: background-color .5s, color .5s;
 }
 
-.dark .hbs-link-button {
+.dark .link-button {
   color: var(--vt-c-indigo) !important;
 }
 
-.hbs-link-button:hover {
+.link-button:hover {
   background-color: var(--vt-c-green-dark);
-  transition-duration: 0.2s;
+  transition-duration: .2s;
 }
 
-.dark .hbs-link-button:hover {
+.dark .link-button:hover {
   background-color: var(--vt-c-green-light);
 }
+
 </style>
