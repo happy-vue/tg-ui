@@ -10,8 +10,8 @@ export function NavbarFix(): Plugin {
         return `
 <template>
   <a class="VPNavBarTitle" href="/">
-    <img src="/logo.png" alt="vue-hbs-admin" class="logo" style="width: 24px;"/>
-    <span class="text">vue-hbs-admin</span>
+    <img src="/logo.png" alt="tg-ui" class="logo" style="width: 24px;"/>
+    <span class="text">tg-ui</span>
   </a>
 </template>
 

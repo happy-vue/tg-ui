@@ -1,6 +1,6 @@
 {
-  "name": "vue-hbs-admin-docs",
-  "version": "1.0.0",
+  "name": "@tg-ui/docs",
+  "version": "0.0.1",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -10,15 +10,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Hongbusi/vue-hbs-admin-docs.git"
+    "url": "git+https://github.com/zgsgs/tg-ui.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Hongbusi/vue-hbs-admin-docs/issues"
+    "url": "https://github.com/zgsgs/tg-ui/issues"
   },
-  "homepage": "https://github.com/Hongbusi/vue-hbs-admin-docs#readme",
+  "homepage": "https://github.com/zgsgs/tg-ui#readme",
   "devDependencies": {
     "@types/node": "^17.0.23",
     "@vue/theme": "^1.0.1",

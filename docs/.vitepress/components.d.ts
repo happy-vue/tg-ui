@@ -5,7 +5,6 @@
 declare module 'vue' {
   export interface GlobalComponents {
     Button: typeof import('./theme/components/Button.vue')['default']
-    HbsButton: typeof import('./theme/components/HbsButton.vue')['default']
   }
 }
 

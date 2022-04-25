@@ -16,7 +16,7 @@
         danger
         @click="
         setWatermark({
-          str: 'vue-hbs-admin',
+          str: 'tg-ui',
           str2: 'watermark',
           fillStyle: '#409EFF',
         })

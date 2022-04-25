@@ -20,12 +20,6 @@ export default defineConfigWithTheme<Config>({
   ],
 
   themeConfig: {
-    algolia: {
-      indexName: 'Hongbusi',
-      appId: '58YVUHI1VL',
-      apiKey: '1bde22dfb8f411080436bd011af2c580'
-    },
-
     socialLinks: [
       { icon: 'github', link: 'https://github.com/zgsgs/tg-ui.git' }
     ],
