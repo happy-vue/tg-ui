@@ -1,0 +1,29 @@
+:root {
+  --vt-c-bg-code: #fff5f5;
+  --vt-c-text-code: #ff502c;
+}
+
+.dark {
+  --vt-c-bg-code: var(--vt-c-black-mute);
+  --vt-c-text-code: var(--vt-c-text-dark-code);
+}
+
+/* inline code */
+.vt-doc :not(pre) > code {
+  background-color: var(--vt-c-bg-code);
+  color: var(--vt-c-text-code);
+}
+
+.VPFooter {
+  background-color: var(--vt-c-bg) !important;
+}
+
+.VPFooter .copyright {
+  font-size: .9rem;
+  color: var(--vt-c-text-light);
+  opacity: 0.6;
+}
+
+.VPNavBarSearch {
+  display: none !important;
+}

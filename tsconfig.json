@@ -2,9 +2,14 @@
   "extends": "@vue/tsconfig/tsconfig.web.json",
   "compilerOptions": {
     "baseUrl": ".",
+    "preserveValueImports": false,
     "paths": {
-      "~/*": ["./*"],
-      "@/*": ["./src/*"]
+      "~/*": [
+        "./*"
+      ],
+      "@/*": [
+        "./src/*"
+      ]
     }
   },
   "include": [
@@ -19,5 +24,10 @@
     "typings/**/*.ts",
     "typings/**/*.d.ts"
   ],
-  "exclude": ["node_module", "**/__tests__", "dist/**", "packages/tg-ui/**"]
+  "exclude": [
+    "node_module",
+    "**/__tests__",
+    "dist/**",
+    "packages/tg-ui/**"
+  ]
 }
