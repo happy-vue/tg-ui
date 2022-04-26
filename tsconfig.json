@@ -10,7 +10,10 @@
       "@/*": [
         "./src/*"
       ]
-    }
+    },
+    "types": [
+      "unplugin-vue-define-options"
+    ]
   },
   "include": [
     "examples/**/*.ts",
