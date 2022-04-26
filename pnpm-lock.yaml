@@ -29,6 +29,7 @@ importers:
       gulp-clean-css: ^4.3.0
       gulp-sass: ^5.1.0
       gulp-typescript: ^6.0.0-alpha.1
+      husky: ^7.0.4
       prettier: ^2.6.2
       rimraf: ^3.0.2
       rollup: ^2.70.1
@@ -68,6 +69,7 @@ importers:
       gulp-clean-css: 4.3.0
       gulp-sass: 5.1.0
       gulp-typescript: 6.0.0-alpha.1_typescript@4.6.3
+      husky: 7.0.4
       prettier: 2.6.2
       rimraf: 3.0.2
       rollup: 2.70.1
@@ -3273,6 +3275,12 @@ packages:
   /human-signals/2.1.0:
     resolution: {integrity: sha512-B4FFZ6q/T2jhhksgkbEW3HBvWIfDW85snkQgawt07S7J5QXTk6BkNV+0yAeZrM5QpMAdYlocGoljn0sJ/WQkFw==}
     engines: {node: '>=10.17.0'}
+    dev: true
+
+  /husky/7.0.4:
+    resolution: {integrity: sha512-vbaCKN2QLtP/vD4yvs6iz6hBEo6wkSzs8HpRah1Z6aGmF2KW5PdYuAd7uX5a+OyBZHBhd+TFLqgjUgytQr4RvQ==}
+    engines: {node: '>=12'}
+    hasBin: true
     dev: true
 
   /ignore/5.2.0:
