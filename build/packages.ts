@@ -7,7 +7,7 @@ import ts from 'gulp-typescript';
 
 // 专门打包utils,指令,hooks等ts文件
 export const buildPackages = (dirName: string, name: string) => {
-  const tasks = Object.entries(buildConfig).map(([module, config]) => {
+  const tasks = Object.entries(buildConfig).map(([, config]) => {
     const tsConfig = path.resolve(projectRoot, 'tsconfig.json');
     const inputs = ['**/*.ts', '!gulpfile.ts', '!node_modules'];
     const output = path.resolve(dirName, 'dist', config.output.name);
