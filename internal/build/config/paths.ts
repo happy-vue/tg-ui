@@ -3,7 +3,7 @@ import { PKG_NAME } from './constants'
 
 /* 源文件 */
 // 项目根目录
-export const projectRoot = resolve(__dirname, '..', '..')
+export const projectRoot = resolve(__dirname, '..', '..', '..')
 // 包目录
 export const pkgRoot = resolve(projectRoot, 'packages')
 // 包/组件目录

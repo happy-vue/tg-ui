@@ -28,6 +28,7 @@ export default series(
       await run('pnpm run --filter ./packages --parallel build')
     }),
     // 执行build命令时会调用rollup，给rollup传参数buildFullComponent，那么就会执行导出任务叫buildFullComponent
+    // runTask('buildFullComponent'),
     withTaskName('buildFullComponent', async () => {
       await run('pnpm run build buildFullComponent')
     }),

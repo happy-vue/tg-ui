@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "pnpm -C examples dev",
-    "build": "gulp --require sucrase/register/ts -f build/gulpfile.ts",
+    "build": "gulp --require sucrase/register/ts -f internal/build/gulpfile.ts",
     "preview": "vite preview",
     "docs:dev": "pnpm -C docs dev",
     "docs:build": "pnpm -C docs build",

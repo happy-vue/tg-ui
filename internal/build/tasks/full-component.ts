@@ -77,5 +77,5 @@ async function buildEntry() {
   )
 }
 
-// gulp适合流程控制和代码的转义  没有打包的功能
+// gulp适合流程控制和代码的转义 没有打包的功能
 export const buildFullComponent = parallel(buildFull, buildEntry)

@@ -40,7 +40,7 @@ export const genEntryTypes = async () => {
     return f
   })
   await project.emit({
-    emitOnlyDtsFiles: true,
+    emitOnlyDtsFiles: true, // 仅生成定义文件
   })
   const tasks = sourceFiles.map(async (sourceFile) => {
     const emitOutput = sourceFile.getEmitOutput()
