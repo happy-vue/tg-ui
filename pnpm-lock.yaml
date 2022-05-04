@@ -8,6 +8,7 @@ importers:
       '@commitlint/config-conventional': ^16.2.1
       '@rollup/plugin-commonjs': ^21.0.3
       '@rollup/plugin-node-resolve': ^13.2.0
+      '@tg-ui/build': workspace:*
       '@tg-ui/components': workspace:*
       '@tg-ui/theme-chalk': workspace:*
       '@tg-ui/utils': workspace:*
@@ -22,6 +23,7 @@ importers:
       '@zgsgs/eslint-config': ^0.0.6
       chalk: ^5.0.1
       clipboard-copy: ^4.0.1
+      consola: ^2.15.3
       cross-env: ^7.0.3
       eslint: ^8.13.0
       fast-glob: ^3.2.11
@@ -32,7 +34,6 @@ importers:
       gulp-typescript: ^6.0.0-alpha.1
       husky: ^7.0.4
       lint-staged: ^12.4.1
-      plop: ^3.0.5
       rimraf: ^3.0.2
       rollup: ^2.70.1
       rollup-plugin-typescript2: ^0.31.2
@@ -44,6 +45,7 @@ importers:
       vue: ^3.2.25
       vue-tsc: ^0.29.8
     dependencies:
+      '@tg-ui/build': link:internal/build
       '@tg-ui/components': link:packages/components
       '@tg-ui/theme-chalk': link:packages/theme-chalk
       '@tg-ui/utils': link:packages/utils
@@ -63,6 +65,7 @@ importers:
       '@zgsgs/eslint-config': 0.0.6_eslint@8.14.0+typescript@4.6.3
       chalk: 5.0.1
       clipboard-copy: 4.0.1
+      consola: 2.15.3
       cross-env: 7.0.3
       eslint: 8.14.0
       fast-glob: 3.2.11
@@ -73,7 +76,6 @@ importers:
       gulp-typescript: 6.0.0-alpha.1_typescript@4.6.3
       husky: 7.0.4
       lint-staged: 12.4.1
-      plop: 3.1.0
       rimraf: 3.0.2
       rollup: 2.70.1
       rollup-plugin-typescript2: 0.31.2_rollup@2.70.1+typescript@4.6.3
@@ -115,10 +117,59 @@ importers:
       vue: 3.2.31
       vue-tsc: 0.29.8_typescript@4.6.3
 
-  packages/components:
-    specifiers: {}
+  internal/build:
+    specifiers:
+      '@rollup/plugin-commonjs': ^21.0.3
+      '@rollup/plugin-node-resolve': ^13.2.0
+      '@types/gulp': ^4.0.9
+      '@types/gulp-autoprefixer': ^0.0.33
+      '@types/gulp-clean-css': ^4.3.0
+      '@types/gulp-sass': ^5.0.0
+      '@types/sass': ^1.43.1
+      '@vue/compiler-sfc': ^3.2.32
+      fast-glob: ^3.2.11
+      gulp: ^4.0.2
+      gulp-autoprefixer: ^8.0.0
+      gulp-clean-css: ^4.3.0
+      gulp-sass: ^5.1.0
+      gulp-typescript: ^6.0.0-alpha.1
+      rollup: ^2.70.1
+      rollup-plugin-typescript2: ^0.31.2
+      rollup-plugin-vue: ^6.0.0
+      ts-morph: ^14.0.0
+      typescript: ^4.5.4
+      vue: ^3.2.25
+      vue-tsc: ^0.29.8
+    devDependencies:
+      '@rollup/plugin-commonjs': 21.0.3_rollup@2.70.1
+      '@rollup/plugin-node-resolve': 13.2.0_rollup@2.70.1
+      '@types/gulp': 4.0.9
+      '@types/gulp-autoprefixer': 0.0.33
+      '@types/gulp-clean-css': 4.3.0
+      '@types/gulp-sass': 5.0.0
+      '@types/sass': 1.43.1
+      '@vue/compiler-sfc': 3.2.32
+      fast-glob: 3.2.11
+      gulp: 4.0.2
+      gulp-autoprefixer: 8.0.0_gulp@4.0.2
+      gulp-clean-css: 4.3.0
+      gulp-sass: 5.1.0
+      gulp-typescript: 6.0.0-alpha.1_typescript@4.6.3
+      rollup: 2.70.1
+      rollup-plugin-typescript2: 0.31.2_rollup@2.70.1+typescript@4.6.3
+      rollup-plugin-vue: 6.0.0_@vue+compiler-sfc@3.2.32
+      ts-morph: 14.0.0
+      typescript: 4.6.3
+      vue: 3.2.31
+      vue-tsc: 0.29.8_typescript@4.6.3
 
-  packages/plop:
+  internal/plop:
+    specifiers:
+      plop: ^3.0.5
+    devDependencies:
+      plop: 3.1.0
+
+  packages/components:
     specifiers: {}
 
   packages/tg-ui:
@@ -1051,7 +1102,7 @@ packages:
       '@vue/shared': 3.2.32
       estree-walker: 2.0.2
       magic-string: 0.25.9
-      postcss: 8.4.12
+      postcss: 8.4.13
       source-map: 0.6.1
     dev: true
 
@@ -1652,7 +1703,7 @@ packages:
     hasBin: true
     dev: true
 
-  /autoprefixer/10.4.4_postcss@8.4.12:
+  /autoprefixer/10.4.4_postcss@8.4.13:
     resolution: {integrity: sha512-Tm8JxsB286VweiZ5F0anmbyGiNI3v3wGv3mz9W+cxEDYB/6jbnj6GM9H9mK3wIL8ftgl+C07Lcwb8PG5PCCPzA==}
     engines: {node: ^10 || ^12 || >=14}
     hasBin: true
@@ -1664,7 +1715,7 @@ packages:
       fraction.js: 4.2.0
       normalize-range: 0.1.2
       picocolors: 1.0.0
-      postcss: 8.4.12
+      postcss: 8.4.13
       postcss-value-parser: 4.2.0
     dev: true
 
@@ -2210,6 +2261,10 @@ packages:
       inherits: 2.0.4
       readable-stream: 2.3.7
       typedarray: 0.0.6
+    dev: true
+
+  /consola/2.15.3:
+    resolution: {integrity: sha512-9vAdYbHj6x2fLKC4+oPH0kFzY/orMZyG2Aj+kNylHxKGJ/Ed4dpNyAQYwJOdqO4zdM7XpVHmyejQDcQHrnuXbw==}
     dev: true
 
   /constant-case/3.0.4:
@@ -3817,11 +3872,11 @@ packages:
       gulp:
         optional: true
     dependencies:
-      autoprefixer: 10.4.4_postcss@8.4.12
+      autoprefixer: 10.4.4_postcss@8.4.13
       fancy-log: 1.3.3
       gulp: 4.0.2
       plugin-error: 1.0.1
-      postcss: 8.4.12
+      postcss: 8.4.13
       through2: 4.0.2
       vinyl-sourcemaps-apply: 0.2.1
     dev: true
@@ -5245,7 +5300,7 @@ packages:
     engines: {node: '>= 0.4'}
     dependencies:
       call-bind: 1.0.2
-      define-properties: 1.1.3
+      define-properties: 1.1.4
       has-symbols: 1.0.3
       object-keys: 1.1.1
     dev: true

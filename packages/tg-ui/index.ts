@@ -15,10 +15,10 @@ const install = (app: App) => {
   })
 }
 
-// app.use(WPlus)
+// use: app.use(WPlus)
 export default {
   install,
 }
 
-// import { WIcon } from 'tg-ui
+// use: import { WIcon } from 'tg-ui
 export * from '@tg-ui/components'
