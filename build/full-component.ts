@@ -1,26 +1,26 @@
 /**
  * 安装依赖 pnpm install rollup @rollup/plugin-node-resolve @rollup/plugin-commonjs rollup-plugin-typescript2 rollup-plugin-vue -D -w
  */
-import { nodeResolve } from '@rollup/plugin-node-resolve'; // 处理文件路径
-import commonjs from '@rollup/plugin-commonjs'; // 将 CommonJS 模块转换为 ES6
-import vue from 'rollup-plugin-vue';
-import typescript from 'rollup-plugin-typescript2';
-import { rollup } from 'rollup';
-import type { OutputOptions } from 'rollup';
-import { parallel } from 'gulp';
-import fs from 'fs/promises';
-import path from 'path';
-import { pathRewriter } from './utils';
-import { outDir, tgRoot } from './utils/paths';
-import { buildConfig } from './utils/config';
+import fs from 'fs/promises'
+import path from 'path'
+import { nodeResolve } from '@rollup/plugin-node-resolve' // 处理文件路径
+import commonjs from '@rollup/plugin-commonjs' // 将 CommonJS 模块转换为 ES6
+import vue from 'rollup-plugin-vue'
+import typescript from 'rollup-plugin-typescript2'
+import { rollup } from 'rollup'
+import type { OutputOptions } from 'rollup'
+import { parallel } from 'gulp'
+import { pathRewriter } from './utils'
+import { outDir, tgRoot } from './utils/paths'
+import { buildConfig } from './utils/config'
 
 const buildFull = async () => {
   // rollup 打包的配置信息
   const config = {
     input: path.resolve(tgRoot, 'index.ts'), // 打包入口
     plugins: [nodeResolve(), typescript(), vue(), commonjs()],
-    external: (id) => /^vue/.test(id), // 打包的时候不打包vue代码
-  };
+    external: id => /^vue/.test(id), // 打包的时候不打包vue代码
+  }
 
   // 组件库两种使用方式 import 导入组件库 在浏览器中使用script
 
@@ -41,44 +41,44 @@ const buildFull = async () => {
       format: 'esm',
       file: path.resolve(outDir, 'index.esm.js'),
     },
-  ];
+  ]
 
-  const bundle = await rollup(config);
+  const bundle = await rollup(config)
 
   return Promise.all(
     buildConfig.map((option) => {
-      bundle.write(option as OutputOptions);
-      return option;
-    })
-  );
-};
+      bundle.write(option as OutputOptions)
+      return option
+    }),
+  )
+}
 
 async function buildEntry() {
   // 读取tg-ui目录下的所有内容，包括目录和文件
-  const entryFiles = await fs.readdir(tgRoot, { withFileTypes: true });
+  const entryFiles = await fs.readdir(tgRoot, { withFileTypes: true })
 
   // 过滤掉 不是文件的内容和package.json文件  index.ts 作为打包入口
   const entryPoints = entryFiles
-    .filter((f) => f.isFile())
-    .filter((f) => !['package.json'].includes(f.name))
-    .map((f) => path.resolve(tgRoot, f.name));
+    .filter(f => f.isFile())
+    .filter(f => !['package.json'].includes(f.name))
+    .map(f => path.resolve(tgRoot, f.name))
 
   const config = {
     input: entryPoints,
     plugins: [nodeResolve(), vue(), typescript()],
     external: (id: string) => /^vue/.test(id) || /^@tg-ui/.test(id),
-  };
-  const bundle = await rollup(config);
+  }
+  const bundle = await rollup(config)
   return Promise.all(
     Object.values(buildConfig)
-      .map((config) => ({
+      .map(config => ({
         format: config.format,
         dir: config.output.path,
         paths: pathRewriter(config.output.name),
       }))
-      .map((option) => bundle.write(option as OutputOptions))
-  );
+      .map(option => bundle.write(option as OutputOptions)),
+  )
 }
 
 // gulp适合流程控制和代码的转义  没有打包的功能
-export const buildFullComponent = parallel(buildFull, buildEntry);
+export const buildFullComponent = parallel(buildFull, buildEntry)

@@ -1,2 +1,2 @@
-export * from './with-install';
-export * from './with-name';
+export * from './with-install'
+export * from './with-name'

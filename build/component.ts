@@ -1,23 +1,22 @@
 /**
  * 安装依赖 pnpm install fast-glob -w -D
  */
-import { parallel, series } from 'gulp';
-import { rollup } from 'rollup';
-import type { OutputOptions } from 'rollup';
-import { nodeResolve } from '@rollup/plugin-node-resolve';
-import commonjs from '@rollup/plugin-commonjs';
-import vue from 'rollup-plugin-vue';
-import typescript from 'rollup-plugin-typescript2';
-import { sync } from 'fast-glob'; // 同步查找文件
-import glob from 'fast-glob';
-import { Project } from 'ts-morph';
-import type { SourceFile } from 'ts-morph';
-import * as VueCompiler from '@vue/compiler-sfc';
-import fs from 'fs/promises';
-import path from 'path';
-import { pathRewriter, run } from './utils';
-import { compRoot, outDir, projectRoot } from './utils/paths';
-import { buildConfig } from './utils/config';
+import fs from 'fs/promises'
+import path from 'path'
+import { parallel, series } from 'gulp'
+import { rollup } from 'rollup'
+import type { OutputOptions } from 'rollup'
+import { nodeResolve } from '@rollup/plugin-node-resolve'
+import commonjs from '@rollup/plugin-commonjs'
+import vue from 'rollup-plugin-vue'
+import typescript from 'rollup-plugin-typescript2'
+import glob, { sync } from 'fast-glob' // 同步查找文件
+import { Project } from 'ts-morph'
+import type { SourceFile } from 'ts-morph'
+import * as VueCompiler from '@vue/compiler-sfc'
+import { pathRewriter, run } from './utils'
+import { compRoot, outDir, projectRoot } from './utils/paths'
+import { buildConfig } from './utils/config'
 
 const buildEachComponent = async () => {
   // 打包每个组件
@@ -25,32 +24,32 @@ const buildEachComponent = async () => {
   const files = sync('*', {
     cwd: compRoot,
     onlyDirectories: true, // 只查找文件夹
-  });
+  })
 
   // 分别把components文件夹下的组件，放到dist/es/components下 和 dist/lib/components
   const builds = files.map(async (file: string) => {
     // 找到每个组件的入口文件 index.ts
-    const input = path.resolve(compRoot, file, 'index.ts');
+    const input = path.resolve(compRoot, file, 'index.ts')
     const config = {
       input,
       plugins: [nodeResolve(), typescript(), vue(), commonjs()],
-      external: (id) => /^vue/.test(id) || /^@tg-ui/.test(id), // 排除掉vue和@w-plus的依赖
-    };
-    const bundle = await rollup(config);
-    const options = Object.values(buildConfig).map((config) => ({
+      external: id => /^vue/.test(id) || /^@tg-ui/.test(id), // 排除掉vue和@w-plus的依赖
+    }
+    const bundle = await rollup(config)
+    const options = Object.values(buildConfig).map(config => ({
       format: config.format,
       file: path.resolve(config.output.path, `components/${file}/index.js`),
       paths: pathRewriter(config.output.name), // @tg-ui => tg-ui/es tg-ui/lib  处理路径
       exports: 'named',
-    }));
+    }))
 
     await Promise.all(
-      options.map((option) => bundle.write(option as OutputOptions))
-    );
-  });
+      options.map(option => bundle.write(option as OutputOptions)),
+    )
+  })
 
-  return Promise.all(builds);
-};
+  return Promise.all(builds)
+}
 
 async function genTypes() {
   const project = new Project({
@@ -70,61 +69,62 @@ async function genTypes() {
     },
     tsConfigFilePath: path.resolve(projectRoot, 'tsconfig.json'),
     skipAddingFilesFromTsConfig: true,
-  });
+  })
 
   const filePaths = await glob('**/*', {
     // ** 任意目录  * 任意文件
     cwd: compRoot,
     onlyFiles: true,
     absolute: true,
-  });
+  })
 
-  const sourceFiles: SourceFile[] = [];
+  const sourceFiles: SourceFile[] = []
 
   await Promise.all(
     filePaths.map(async (file) => {
       if (file.endsWith('.vue')) {
-        const content = await fs.readFile(file, 'utf8');
-        const sfc = VueCompiler.parse(content);
-        const { script } = sfc.descriptor;
+        const content = await fs.readFile(file, 'utf8')
+        const sfc = VueCompiler.parse(content)
+        const { script } = sfc.descriptor
         if (script) {
-          const content = script.content; // 拿到脚本  icon.vue.ts  => icon.vue.d.ts
-          const sourceFile = project.createSourceFile(`${file}.ts`, content);
-          sourceFiles.push(sourceFile);
+          const content = script.content // 拿到脚本  icon.vue.ts  => icon.vue.d.ts
+          const sourceFile = project.createSourceFile(`${file}.ts`, content)
+          sourceFiles.push(sourceFile)
         }
-      } else {
-        const sourceFile = project.addSourceFileAtPath(file); // 把所有的ts文件都放在一起 发射成.d.ts文件
-        sourceFiles.push(sourceFile);
       }
-    })
-  );
+      else {
+        const sourceFile = project.addSourceFileAtPath(file) // 把所有的ts文件都放在一起 发射成.d.ts文件
+        sourceFiles.push(sourceFile)
+      }
+    }),
+  )
   await project.emit({
     // 默认是放到内存中的
     emitOnlyDtsFiles: true,
-  });
+  })
 
   const tasks = sourceFiles.map(async (sourceFile: any) => {
-    const emitOutput = sourceFile.getEmitOutput();
+    const emitOutput = sourceFile.getEmitOutput()
     const tasks = emitOutput.getOutputFiles().map(async (outputFile: any) => {
-      const filepath = outputFile.getFilePath();
+      const filepath = outputFile.getFilePath()
       await fs.mkdir(path.dirname(filepath), {
         recursive: true,
-      });
-      await fs.writeFile(filepath, pathRewriter('es')(outputFile.getText()));
-    });
-    await Promise.all(tasks);
-  });
+      })
+      await fs.writeFile(filepath, pathRewriter('es')(outputFile.getText()))
+    })
+    await Promise.all(tasks)
+  })
 
-  await Promise.all(tasks);
+  await Promise.all(tasks)
 }
 
 function copyTypes() {
-  const src = path.resolve(outDir, 'types/components/');
+  const src = path.resolve(outDir, 'types/components/')
   const copy = (module) => {
-    const output = path.resolve(outDir, module, 'components');
-    return () => run(`cp -r ${src}/* ${output}`);
-  };
-  return parallel(copy('es'), copy('lib'));
+    const output = path.resolve(outDir, module, 'components')
+    return () => run(`cp -r ${src}/* ${output}`)
+  }
+  return parallel(copy('es'), copy('lib'))
 }
 
 async function buildComponentEntry() {
@@ -132,21 +132,21 @@ async function buildComponentEntry() {
     input: path.resolve(compRoot, 'index.ts'),
     plugins: [typescript()],
     external: () => true,
-  };
-  const bundle = await rollup(config);
+  }
+  const bundle = await rollup(config)
   return Promise.all(
     Object.values(buildConfig)
-      .map((config) => ({
+      .map(config => ({
         format: config.format,
         file: path.resolve(config.output.path, 'components/index.js'),
       }))
-      .map((config) => bundle.write(config as OutputOptions))
-  );
+      .map(config => bundle.write(config as OutputOptions)),
+  )
 }
 
 export const buildComponent = series(
   buildEachComponent,
   genTypes,
   copyTypes(),
-  buildComponentEntry
-);
+  buildComponentEntry,
+)

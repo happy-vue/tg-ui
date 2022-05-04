@@ -12,11 +12,12 @@
  * @return {*}
  */
 function camelize(str) {
-  if (!str.trim()) return '';
+  if (!str.trim())
+    return ''
   const result = str.replace(/-(\w)/g, (_, char) => {
-    return char.toUpperCase();
-  });
-  return result.replace(result[0], result[0].toLowerCase());
+    return char.toUpperCase()
+  })
+  return result.replace(result[0], result[0].toLowerCase())
 }
 
 /**
@@ -27,11 +28,12 @@ function camelize(str) {
  * @return {*}
  */
 function getPascal(str) {
-  if (!str.trim()) return '';
+  if (!str.trim())
+    return ''
   const result = str.replace(/-(\w)/g, (_, char) => {
-    return char.toUpperCase();
-  });
-  return result.replace(result[0], result[0].toUpperCase());
+    return char.toUpperCase()
+  })
+  return result.replace(result[0], result[0].toUpperCase())
 }
 
 /**
@@ -42,14 +44,15 @@ function getPascal(str) {
  * @return {*}
  */
 function getKebabCase(str) {
-  if (!str.trim()) return '';
+  if (!str.trim())
+    return ''
   const result = str.replace(/([A-Z])/g, (char) => {
-    return `-${char.toLowerCase()}`;
-  });
-  if (result.indexOf('-') === 0) {
-    return result.substr(1);
-  }
-  return result;
+    return `-${char.toLowerCase()}`
+  })
+  if (result.indexOf('-') === 0)
+    return result.substr(1)
+
+  return result
 }
 
 /**
@@ -59,7 +62,7 @@ function getKebabCase(str) {
  * @return {*}
  */
 function capitalize(str) {
-  return str.trim() ? str.replace(str[0], str[0].toUpperCase()) : '';
+  return str.trim() ? str.replace(str[0], str[0].toUpperCase()) : ''
 }
 
 /**
@@ -69,7 +72,7 @@ function capitalize(str) {
  * @return {*}
  */
 function lowercase(str) {
-  return str.trim() ? str.replace(str[0], str[0].toLowerCase()) : '';
+  return str.trim() ? str.replace(str[0], str[0].toLowerCase()) : ''
 }
 /**
  * @description: 判断空字符
@@ -78,7 +81,7 @@ function lowercase(str) {
  * @return {*}
  */
 function isEmptyString(str) {
-  return !str || str.trim() === '';
+  return !str || str.trim() === ''
 }
 
 /**
@@ -88,7 +91,7 @@ function isEmptyString(str) {
  * @return {*}
  */
 function validatePascal(str) {
-  return /^[A-Z][a-z0-9]+([A-Z][a-z0-9]+)*/.test(str);
+  return /^[A-Z][a-z0-9]+([A-Z][a-z0-9]+)*/.test(str)
 }
 
 /**
@@ -98,7 +101,7 @@ function validatePascal(str) {
  * @return {*}
  */
 function validateCamel(str) {
-  return /^[a-z][a-z0-9]+([A-Z][a-z0-9]+)*/.test(str);
+  return /^[a-z][a-z0-9]+([A-Z][a-z0-9]+)*/.test(str)
 }
 
 /**
@@ -108,7 +111,7 @@ function validateCamel(str) {
  * @return {*}
  */
 function validateKebabCase(str) {
-  return /^[a-z]+(-[a-z]+)*/.test(str);
+  return /^[a-z]+(-[a-z]+)*/.test(str)
 }
 
 module.exports = {
@@ -121,4 +124,4 @@ module.exports = {
   validatePascal,
   validateCamel,
   validateKebabCase,
-};
+}

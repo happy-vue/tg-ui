@@ -1,15 +1,15 @@
 /*
  * @Author: Lin ZeFan
  * @Date: 2022-04-09 19:02:32
- * @LastEditTime : 2022-04-23 01:53:04
+ * @LastEditTime : 2022-05-04 13:49:15
  * @LastEditors  : Please set LastEditors
  * @Description: plop生成组件执行脚本
  * @FilePath     : \tg-ui\packages\plop\component\config.js
  *
  */
 
-const { PREFIX } = require('../constants');
-const { camelize, getPascal, validateKebabCase } = require('../utils');
+const { PREFIX } = require('../constants')
+const { camelize, getPascal, validateKebabCase } = require('../utils')
 
 module.exports = (plop) => {
   plop.setGenerator('component', {
@@ -19,15 +19,15 @@ module.exports = (plop) => {
         type: 'input',
         name: 'name',
         message: '提供你的组件名称(使用 kebab-case)',
-        validate: (v) => validateKebabCase(v),
+        validate: v => validateKebabCase(v),
       },
     ],
     actions: (data) => {
-      const { name } = data;
-      const prefixName = `${PREFIX}${name}`;
-      const camelName = camelize(name);
-      const pascalName = getPascal(name);
-      const pascalPrefixName = getPascal(prefixName);
+      const { name } = data
+      const prefixName = `${PREFIX}${name}`
+      const camelName = camelize(name)
+      const pascalName = getPascal(name)
+      const pascalPrefixName = getPascal(prefixName)
       // console.log(`[prefixName, pascalName, pascalPrefixName]`, [
       //   prefixName,
       //   pascalName,
@@ -72,9 +72,9 @@ module.exports = (plop) => {
             pascalPrefixName,
           },
         },
-      ];
+      ]
 
-      return actions;
+      return actions
     },
-  });
-};
+  })
+}
