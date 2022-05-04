@@ -1,0 +1,38 @@
+{
+  "name": "@tg-ui/build",
+  "type": "module",
+  "version": "0.0.1",
+  "private": true,
+  "description": "Internal build tools",
+  "keywords": [],
+  "license": "MIT",
+  "author": "zgsgs",
+  "main": "index.js",
+  "scripts": {
+    "build": "gulp --require sucrase/register/ts -f ./gulpfile.ts"
+  },
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "^21.0.3",
+    "@rollup/plugin-node-resolve": "^13.2.0",
+    "@types/gulp": "^4.0.9",
+    "@types/gulp-autoprefixer": "^0.0.33",
+    "@types/gulp-clean-css": "^4.3.0",
+    "@types/gulp-sass": "^5.0.0",
+    "@types/sass": "^1.43.1",
+    "@vue/compiler-sfc": "^3.2.32",
+    "fast-glob": "^3.2.11",
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^8.0.0",
+    "gulp-clean-css": "^4.3.0",
+    "gulp-sass": "^5.1.0",
+    "gulp-typescript": "^6.0.0-alpha.1",
+    "rollup": "^2.70.1",
+    "rollup-plugin-typescript2": "^0.31.2",
+    "rollup-plugin-vue": "^6.0.0",
+    "sucrase": "^3.20.3",
+    "ts-morph": "^14.0.0",
+    "typescript": "^4.5.4",
+    "vue": "^3.2.25",
+    "vue-tsc": "^0.29.8"
+  }
+}

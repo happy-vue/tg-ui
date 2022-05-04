@@ -1,8 +1,26 @@
 {
-  "extends": "@vue/tsconfig/tsconfig.web.json",
   "compilerOptions": {
-    "baseUrl": ".",
-    "preserveValueImports": false,
+    "module": "ESNext", // 打包模块类型ESNext
+    "declaration": false, // 默认不要声明文件
+    "noImplicitAny": false, // 支持类型不标注可以默认any
+    "removeComments": true, // 删除注释
+    "moduleResolution": "node", // 按照node模块来解析
+    "esModuleInterop": true, // 支持es6,commonjs模块
+    "jsx": "preserve", // jsx 不转
+    "noLib": false, // 不处理类库
+    "target": "es6", // 遵循es6版本
+    "sourceMap": true,
+    "lib": [
+      // 编译时用的库
+      "ESNext",
+      "DOM"
+    ],
+    "allowSyntheticDefaultImports": true, // 允许没有导出的模块中导入
+    "experimentalDecorators": true, // 装饰器语法
+    "forceConsistentCasingInFileNames": true, // 强制区分大小写
+    "resolveJsonModule": true, // 解析json模块
+    "strict": true, // 是否启动严格模式
+    "skipLibCheck": true, // 跳过类库检测
     "paths": {
       "~/*": [
         "./*"
@@ -10,10 +28,7 @@
       "@/*": [
         "./src/*"
       ]
-    },
-    "types": [
-      "unplugin-vue-define-options"
-    ]
+    }
   },
   "include": [
     "examples/**/*.ts",
@@ -28,9 +43,10 @@
     "typings/**/*.d.ts"
   ],
   "exclude": [
-    "node_module",
+    // 排除掉哪些类库
+    "node_modules",
     "**/__tests__",
     "dist/**",
-    "packages/tg-ui/**"
+    "tg-ui/**"
   ]
 }

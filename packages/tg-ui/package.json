@@ -4,6 +4,9 @@
   "description": "",
   "main": "lib/index.js",
   "module": "es/index.js",
+  "output": {
+    "exports": "named"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },

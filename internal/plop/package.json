@@ -1,0 +1,16 @@
+{
+  "name": "@tg-ui/plop",
+  "version": "0.0.1",
+  "private": true,
+  "description": "",
+  "keywords": [],
+  "license": "ISC",
+  "author": "",
+  "scripts": {
+    "component": "plop component",
+    "api": "plop api"
+  },
+  "devDependencies": {
+    "plop": "^3.0.5"
+  }
+}

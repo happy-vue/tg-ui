@@ -1,10 +1,10 @@
 {
   "name": "@tg-ui/theme-chalk",
   "version": "1.0.0",
+  "license": "ISC",
+  "author": "",
   "main": "index.js",
   "scripts": {
-    "build": "gulp"
-  },
-  "author": "",
-  "license": "ISC"
+    "build": "gulp --require sucrase/register/ts -f ./gulpfile.ts"
+  }
 }
