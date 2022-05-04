@@ -10,26 +10,24 @@ import typescript from 'rollup-plugin-typescript2'
 import { rollup } from 'rollup'
 import type { OutputOptions } from 'rollup'
 import { parallel } from 'gulp'
-import { pathRewriter } from './utils'
-import { outDir, tgRoot } from './utils/paths'
-import { buildConfig } from './utils/config'
+import { pathRewriter } from '../utils'
+import { buildOutput, uiRoot } from '../config/paths'
+import type { Module } from '../config/bundle'
+import { bundleConfig } from '../config/bundle'
 
 const buildFull = async () => {
   // rollup 打包的配置信息
   const config = {
-    input: path.resolve(tgRoot, 'index.ts'), // 打包入口
+    input: path.resolve(uiRoot, 'index.ts'), // 打包入口
     plugins: [nodeResolve(), typescript(), vue(), commonjs()],
     external: id => /^vue/.test(id), // 打包的时候不打包vue代码
   }
 
-  // 组件库两种使用方式 import 导入组件库 在浏览器中使用script
-
-  // esm umd
-
+  // 组件库 esm umd 两种使用方式 import 导入组件库 在浏览器中使用script
   const buildConfig = [
     {
       format: 'umd', // 打包的格式
-      file: path.resolve(outDir, 'index.js'),
+      file: path.resolve(buildOutput, 'index.js'),
       name: 'tgUi', // 全局变量名字
       exports: 'named', // 导出的名字 用命名的方式导出 libraryTarget:"" name:""
       globals: {
@@ -39,10 +37,9 @@ const buildFull = async () => {
     },
     {
       format: 'esm',
-      file: path.resolve(outDir, 'index.esm.js'),
+      file: path.resolve(buildOutput, 'index.esm.js'),
     },
   ]
-
   const bundle = await rollup(config)
 
   return Promise.all(
@@ -54,14 +51,14 @@ const buildFull = async () => {
 }
 
 async function buildEntry() {
-  // 读取tg-ui目录下的所有内容，包括目录和文件
-  const entryFiles = await fs.readdir(tgRoot, { withFileTypes: true })
+  // 读取 tg-ui 目录下的所有内容，包括目录和文件
+  const entryFiles = await fs.readdir(uiRoot, { withFileTypes: true })
 
   // 过滤掉 不是文件的内容和package.json文件  index.ts 作为打包入口
   const entryPoints = entryFiles
     .filter(f => f.isFile())
     .filter(f => !['package.json'].includes(f.name))
-    .map(f => path.resolve(tgRoot, f.name))
+    .map(f => path.resolve(uiRoot, f.name))
 
   const config = {
     input: entryPoints,
@@ -70,11 +67,11 @@ async function buildEntry() {
   }
   const bundle = await rollup(config)
   return Promise.all(
-    Object.values(buildConfig)
+    Object.values(bundleConfig)
       .map(config => ({
         format: config.format,
         dir: config.output.path,
-        paths: pathRewriter(config.output.name),
+        paths: pathRewriter(config.output.name as Module),
       }))
       .map(option => bundle.write(option as OutputOptions)),
   )

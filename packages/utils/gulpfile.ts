@@ -1,4 +1,5 @@
 // 打包工具方法
-import { buildPackages } from '../../build/packages'
+// import { buildUtils } from '@tg-ui/build/tasks'
+import { buildUtils } from '../../build/tasks'
 
-export default buildPackages(__dirname, 'utils')
+export default buildUtils(__dirname, 'utils')

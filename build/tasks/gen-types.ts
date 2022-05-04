@@ -4,13 +4,15 @@ import glob from 'fast-glob'
 import type { SourceFile } from 'ts-morph'
 import { ModuleKind, Project, ScriptTarget } from 'ts-morph'
 import { parallel, series } from 'gulp'
-import { run, withTaskName } from './utils'
-import { outDir, projectRoot, tgRoot } from './utils/paths'
-import { buildConfig } from './utils/config'
+import { run, withTaskName } from '../utils'
+import { buildOutput, projectRoot, uiRoot } from '../config/paths'
+import { bundleConfig } from '../config/bundle'
+import { PKG_PREFIX } from '../config/constants'
 
+// 生成入口定义
 export const genEntryTypes = async () => {
   const files = await glob('*.ts', {
-    cwd: tgRoot,
+    cwd: uiRoot,
     absolute: true,
     onlyFiles: true,
   })
@@ -22,9 +24,9 @@ export const genEntryTypes = async () => {
       allowJs: true,
       emitDeclarationOnly: true,
       noEmitOnError: false,
-      outDir: path.resolve(outDir, 'entry/types'),
+      outDir: path.resolve(buildOutput, 'entry/types'),
       target: ScriptTarget.ESNext,
-      rootDir: tgRoot,
+      rootDir: uiRoot,
       strict: false,
     },
     skipFileDependencyResolution: true,
@@ -47,7 +49,7 @@ export const genEntryTypes = async () => {
       await fs.mkdir(path.dirname(filepath), { recursive: true })
       await fs.writeFile(
         filepath,
-        outputFile.getText().split('@tg-ui').join('.'),
+        outputFile.getText().split(PKG_PREFIX).join('.'),
         'utf8',
       )
     }
@@ -55,15 +57,16 @@ export const genEntryTypes = async () => {
   await Promise.all(tasks)
 }
 
+// 把入口定义 分别拷贝到对应类型的目录下
 export const copyEntryTypes = () => {
-  const src = path.resolve(outDir, 'entry/types')
+  const src = path.resolve(buildOutput, 'entry/types')
   const copy = (module) => {
     return parallel(
       withTaskName(`copyEntryTypes:${module}`, async () => {
         await run(
           `cp -r ${src}/* ${path.resolve(
-            outDir,
-            buildConfig[module].output.path,
+            buildOutput,
+            bundleConfig[module].output.path,
           )}/`,
         )
       }),

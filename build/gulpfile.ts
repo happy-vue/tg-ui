@@ -1,13 +1,13 @@
 import { parallel, series } from 'gulp'
-import { genTypes } from './gen-types'
+import { genTypes } from './tasks'
 import { run, withTaskName } from './utils'
-import { outDir, tgRoot } from './utils/paths'
+import { buildOutput, uiRoot } from './config/paths'
 
 // gulp 不打包只做代码转化 使用它做流程控制
 
 // 拷贝源码
 const copySourceCode = () => async () => {
-  await run(`cp ${tgRoot}/package.json ${outDir}/package.json`)
+  await run(`cp ${uiRoot}/package.json ${buildOutput}/package.json`)
 }
 
 /**
@@ -39,5 +39,4 @@ export default series(
 )
 
 // 任务执行器 gulp 任务名 就会执行对应的任务
-export * from './full-component'
-export * from './component'
+export * from './tasks'

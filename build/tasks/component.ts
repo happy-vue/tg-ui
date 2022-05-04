@@ -14,32 +14,33 @@ import glob, { sync } from 'fast-glob' // 同步查找文件
 import { Project } from 'ts-morph'
 import type { SourceFile } from 'ts-morph'
 import * as VueCompiler from '@vue/compiler-sfc'
-import { pathRewriter, run } from './utils'
-import { compRoot, outDir, projectRoot } from './utils/paths'
-import { buildConfig } from './utils/config'
+import { pathRewriter, run } from '../utils'
+import { buildOutput, projectRoot, vueComponentRoot } from '../config/paths'
+import type { Module } from '../config/bundle'
+import { bundleConfig } from '../config/bundle'
 
+// 打包每个组件
 const buildEachComponent = async () => {
-  // 打包每个组件
-  // 查找components下所有的组件目录 ["icon"]
+  // 查找 components 下所有的组件目录 ["icon", "button", ...]
   const files = sync('*', {
-    cwd: compRoot,
+    cwd: vueComponentRoot,
     onlyDirectories: true, // 只查找文件夹
   })
 
   // 分别把components文件夹下的组件，放到dist/es/components下 和 dist/lib/components
   const builds = files.map(async (file: string) => {
     // 找到每个组件的入口文件 index.ts
-    const input = path.resolve(compRoot, file, 'index.ts')
+    const input = path.resolve(vueComponentRoot, file, 'index.ts')
     const config = {
       input,
       plugins: [nodeResolve(), typescript(), vue(), commonjs()],
       external: id => /^vue/.test(id) || /^@tg-ui/.test(id), // 排除掉vue和@w-plus的依赖
     }
     const bundle = await rollup(config)
-    const options = Object.values(buildConfig).map(config => ({
+    const options = Object.values(bundleConfig).map(config => ({
       format: config.format,
       file: path.resolve(config.output.path, `components/${file}/index.js`),
-      paths: pathRewriter(config.output.name), // @tg-ui => tg-ui/es tg-ui/lib  处理路径
+      paths: pathRewriter(config.output.name as Module), // @tg-ui => tg-ui/es tg-ui/lib  处理路径
       exports: 'named',
     }))
 
@@ -59,7 +60,7 @@ async function genTypes() {
       declaration: true,
       emitDeclarationOnly: true,
       noEmitOnError: true,
-      outDir: path.resolve(outDir, 'types'),
+      outDir: path.resolve(buildOutput, 'types'),
       baseUrl: projectRoot,
       paths: {
         '@tg-ui/*': ['packages/*'],
@@ -73,7 +74,7 @@ async function genTypes() {
 
   const filePaths = await glob('**/*', {
     // ** 任意目录  * 任意文件
-    cwd: compRoot,
+    cwd: vueComponentRoot,
     onlyFiles: true,
     absolute: true,
   })
@@ -110,7 +111,7 @@ async function genTypes() {
       await fs.mkdir(path.dirname(filepath), {
         recursive: true,
       })
-      await fs.writeFile(filepath, pathRewriter('es')(outputFile.getText()))
+      await fs.writeFile(filepath, pathRewriter('es' as Module)(outputFile.getText()))
     })
     await Promise.all(tasks)
   })
@@ -119,9 +120,9 @@ async function genTypes() {
 }
 
 function copyTypes() {
-  const src = path.resolve(outDir, 'types/components/')
+  const src = path.resolve(buildOutput, 'types/components/')
   const copy = (module) => {
-    const output = path.resolve(outDir, module, 'components')
+    const output = path.resolve(buildOutput, module, 'components')
     return () => run(`cp -r ${src}/* ${output}`)
   }
   return parallel(copy('es'), copy('lib'))
@@ -129,13 +130,13 @@ function copyTypes() {
 
 async function buildComponentEntry() {
   const config = {
-    input: path.resolve(compRoot, 'index.ts'),
+    input: path.resolve(vueComponentRoot, 'index.ts'),
     plugins: [typescript()],
     external: () => true,
   }
   const bundle = await rollup(config)
   return Promise.all(
-    Object.values(buildConfig)
+    Object.values(bundleConfig)
       .map(config => ({
         format: config.format,
         file: path.resolve(config.output.path, 'components/index.js'),
