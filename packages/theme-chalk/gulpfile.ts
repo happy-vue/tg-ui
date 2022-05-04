@@ -26,7 +26,7 @@ function compileScss() {
     .on('data', (data) => {
       let content = data.contents.toString()
       content = content.replaceAll('./fonts', 'tg-ui/theme-chalk/fonts')
-      data.contents = Buffer.alloc(content)
+      data.contents = Buffer.from(content)
     })
     .pipe(cleanCss())
     .pipe(dest('./dist/css'))
