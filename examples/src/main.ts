@@ -1,5 +1,5 @@
 import { createApp } from 'vue'
-import TgIcon from '@tg-ui/components/icon'
+import { TgIcon } from '@tg-ui/components'
 import App from './App.vue'
 import '@tg-ui/theme-chalk/src/index.scss'
 

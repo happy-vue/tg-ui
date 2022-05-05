@@ -1,20 +1,20 @@
+<script lang="ts">
+import { computed, defineComponent, ref, watch } from 'vue'
+import { {{camelName}}Emits, {{camelName}}Props } from './{{camelName}}'
+
+export default defineComponent({
+  name: 'Tg{{pascalName}}',
+  props: {{camelName}}Props,
+  setup(props) {
+    const emit = defineEmits({{camelName}}Emits)
+  },
+})
+</script>
+
 <template>
   <div class="{{prefixName}}">
     开始编写你的 {{prefixName}} 组件吧
   </div>
 </template>
-
-<script lang="ts" setup>
-  import { computed, ref, watch } from 'vue'
-  import { {{camelName}}Emits, {{camelName}}Props } from './{{camelName}}'
-
-  defineOptions({
-    name: '{{prefixName}}',
-  })
-
-  const props = defineProps({{camelName}}Props)
-  const emit = defineEmits({{camelName}}Emits)
-
-</script>
 
 <style lang="less" scoped src="./{{name}}.less"></style>

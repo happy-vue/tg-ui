@@ -45,7 +45,7 @@ importers:
       vue: ^3.2.25
       vue-tsc: ^0.29.8
     dependencies:
-      '@tg-ui/build': link:internal/build
+      '@tg-ui/build': link:internal/build2
       '@tg-ui/components': link:packages/components
       '@tg-ui/theme-chalk': link:packages/theme-chalk
       '@tg-ui/utils': link:packages/utils
@@ -105,11 +105,14 @@ importers:
 
   examples:
     specifiers:
+      '@tg-ui/components': workspace:*
       '@vitejs/plugin-vue': ^2.3.0
       typescript: ^4.5.4
       vite: ^2.9.0
       vue: ^3.2.25
       vue-tsc: ^0.29.8
+    dependencies:
+      '@tg-ui/components': link:../packages/components
     devDependencies:
       '@vitejs/plugin-vue': 2.3.1_vite@2.9.7+vue@3.2.31
       typescript: 4.6.3
@@ -117,7 +120,7 @@ importers:
       vue: 3.2.31
       vue-tsc: 0.29.8_typescript@4.6.3
 
-  internal/build:
+  internal/build2:
     specifiers:
       '@rollup/plugin-commonjs': ^21.0.3
       '@rollup/plugin-node-resolve': ^13.2.0

@@ -39,8 +39,8 @@
     "packages/**/*.vue",
     "tests/**/*.ts",
     "tests/**/*.tsx",
-    "typings/**/*.ts",
-    "typings/**/*.d.ts"
+    "types/**/*.ts",
+    "types/**/*.d.ts"
   ],
   "exclude": [
     // 排除掉哪些类库

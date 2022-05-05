@@ -1,10 +1,10 @@
 /*
  * @Author: Lin ZeFan
  * @Date: 2022-04-09 19:02:32
- * @LastEditTime : 2022-05-04 13:49:15
+ * @LastEditTime : 2022-05-05 02:03:31
  * @LastEditors  : Please set LastEditors
  * @Description: plop生成组件执行脚本
- * @FilePath     : \tg-ui\packages\plop\component\config.js
+ * @FilePath     : \tg-ui\internal\plop\component\config.js
  *
  */
 
@@ -37,9 +37,10 @@ module.exports = (plop) => {
         {
           type: 'add',
           path: `packages/components/${name}/src/${name}.vue`, // 创建路径
-          templateFile: 'packages/plop/component/hbs/vue.hbs', // 模板，将根据此模板内容生成新文件
+          templateFile: 'internal/plop/component/hbs/vue.hbs', // 模板，将根据此模板内容生成新文件
           data: {
             name,
+            pascalName,
             camelName,
             prefixName,
           },
@@ -47,7 +48,7 @@ module.exports = (plop) => {
         {
           type: 'add',
           path: `packages/components/${name}/src/${name}.less`,
-          templateFile: 'packages/plop/component/hbs/less.hbs',
+          templateFile: 'internal/plop/component/hbs/less.hbs',
           data: {
             name,
             prefixName,
@@ -56,7 +57,7 @@ module.exports = (plop) => {
         {
           type: 'add',
           path: `packages/components/${name}/src/${name}.ts`,
-          templateFile: 'packages/plop/component/hbs/ts.hbs',
+          templateFile: 'internal/plop/component/hbs/ts.hbs',
           data: {
             camelName,
             pascalName,
@@ -65,7 +66,7 @@ module.exports = (plop) => {
         {
           type: 'add',
           path: `packages/components/${name}/index.ts`,
-          templateFile: 'packages/plop/component/hbs/exports.hbs',
+          templateFile: 'internal/plop/component/hbs/exports.hbs',
           data: {
             name,
             pascalName,
