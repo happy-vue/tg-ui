@@ -1,9 +1,9 @@
 <script lang="ts">
 import { computed, defineComponent, ref, watch } from 'vue'
-import { {{camelName}}Emits, {{camelName}}Props } from './{{camelName}}'
+import { {{camelName}}Emits, {{camelName}}Props } from './{{name}}'
 
 export default defineComponent({
-  name: 'Tg{{pascalName}}',
+  name: '{{pascalPrefixName}}',
   props: {{camelName}}Props,
   setup(props) {
     const emit = defineEmits({{camelName}}Emits)

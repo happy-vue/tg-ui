@@ -1,7 +1,7 @@
 /*
  * @Author: Lin ZeFan
  * @Date: 2022-04-09 19:02:32
- * @LastEditTime : 2022-05-05 02:03:31
+ * @LastEditTime : 2022-05-06 09:37:04
  * @LastEditors  : Please set LastEditors
  * @Description: plop生成组件执行脚本
  * @FilePath     : \tg-ui\internal\plop\component\config.js
@@ -23,16 +23,12 @@ module.exports = (plop) => {
       },
     ],
     actions: (data) => {
-      const { name } = data
-      const prefixName = `${PREFIX}${name}`
-      const camelName = camelize(name)
-      const pascalName = getPascal(name)
-      const pascalPrefixName = getPascal(prefixName)
-      // console.log(`[prefixName, pascalName, pascalPrefixName]`, [
-      //   prefixName,
-      //   pascalName,
-      //   pascalPrefixName,
-      // ]);
+      const { name } = data // form-item
+      const prefixName = `${PREFIX}${name}` // u-form-item
+      const camelName = camelize(name) // formItem
+      const pascalName = getPascal(name) // FormItem
+      const pascalPrefixName = getPascal(prefixName) // UFormItem
+
       const actions = [
         {
           type: 'add',
@@ -40,25 +36,26 @@ module.exports = (plop) => {
           templateFile: 'internal/plop/component/hbs/vue.hbs', // 模板，将根据此模板内容生成新文件
           data: {
             name,
-            pascalName,
             camelName,
             prefixName,
+            pascalPrefixName,
           },
         },
-        {
-          type: 'add',
-          path: `packages/components/${name}/src/${name}.less`,
-          templateFile: 'internal/plop/component/hbs/less.hbs',
-          data: {
-            name,
-            prefixName,
-          },
-        },
+        // {
+        //   type: 'add',
+        //   path: `packages/components/${name}/src/${name}.less`,
+        //   templateFile: 'internal/plop/component/hbs/less.hbs',
+        //   data: {
+        //     name,
+        //     prefixName,
+        //   },
+        // },
         {
           type: 'add',
           path: `packages/components/${name}/src/${name}.ts`,
           templateFile: 'internal/plop/component/hbs/ts.hbs',
           data: {
+            name,
             camelName,
             pascalName,
           },
