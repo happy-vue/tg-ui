@@ -13,7 +13,9 @@
     "lint:fix": "lint-staged",
     "plop:cmp": "pnpm -C internal/plop component",
     "plop:api": "pnpm -C internal/plop api",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "test": "vitest",
+    "coverage": "vitest run --coverage"
   },
   "dependencies": {
     "@tg-ui/build": "workspace:*",
@@ -56,6 +58,7 @@
     "sucrase": "^3.20.3",
     "ts-morph": "^14.0.0",
     "typescript": "^4.5.4",
+    "vitest": "^0.12.6",
     "vue": "^3.2.25",
     "vue-tsc": "^0.29.8"
   },
