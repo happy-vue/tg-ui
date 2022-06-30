@@ -5,21 +5,27 @@
 ## Example
 
 ```vue
+<script setup lang="ts">
+import { useWatermark } from '~/components/Watermark'
+
+const { setWatermark, clear } = useWatermark()
+</script>
+
 <template>
   <a-card title="水印功能">
     <a-space>
       <a-button type="primary" @click="setWatermark()">
-         创建默认
+        创建默认
       </a-button>
       <a-button
         type="primary"
         danger
         @click="
-        setWatermark({
-          str: 'tg-ui',
-          str2: 'watermark',
-          fillStyle: '#409EFF',
-        })
+          setWatermark({
+            str: 'tg-ui',
+            str2: 'watermark',
+            fillStyle: '#409EFF',
+          })
         "
       >
         创建自定义
@@ -30,12 +36,6 @@
     </a-space>
   </a-card>
 </template>
-
-<script setup lang="ts">
-import { useWatermark } from '~/components/Watermark'
-
-const { setWatermark, clear } = useWatermark()
-</script>
 ```
 
 ## Function
@@ -44,7 +44,7 @@ const { setWatermark, clear } = useWatermark()
 // 引入
 import { useWatermark } from '~/components/Watermark'
 
-const { setWatermark, clear } = useWatermark();
+const { setWatermark, clear } = useWatermark()
 
 // 有默认值，不传参数，就按照默认设置
 const options = {

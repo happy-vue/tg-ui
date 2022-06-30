@@ -9,10 +9,6 @@
 ### Usage
 
 ``` vue
-<template>
-  <import-excel @success="importSuccess" />
-</template>
-
 <script setup lang="ts">
 import type { ExcelData } from '~/components/Excel'
 import { ImportExcel } from '~/components/Excel'
@@ -33,13 +29,17 @@ const importSuccess = (excelDataList: ExcelData[]) => {
       meta: { sheetName }
     } = excelData
     const columns = []
-    for (const title of header) {
+    for (const title of header)
       columns.push({ title, dataIndex: title })
-    }
+
     tableList.value.push({ title: sheetName, dataSource: results, columns })
   }
 }
 </script>
+
+<template>
+  <import-excel @success="importSuccess" />
+</template>
 ```
 
 ### Events
@@ -60,7 +60,7 @@ const importSuccess = (excelDataList: ExcelData[]) => {
 ## Export
 
 ``` ts
-import { jsonToSheetXlsx, aoaToSheetXlsx } from '~/components/Excel'
+import { aoaToSheetXlsx, jsonToSheetXlsx } from '~/components/Excel'
 ```
 
 ### 数组格式数据导出
@@ -79,7 +79,7 @@ aoaToSheetXlsx({
 ### 自定义导出格式
 
 ``` ts
-import { jsonToSheetXlsx } from '~/components/Excel';
+import { jsonToSheetXlsx } from '~/components/Excel'
 
 jsonToSheetXlsx({
   data,
@@ -94,7 +94,7 @@ jsonToSheetXlsx({
 ### json 格式导出
 
 ``` ts
-import { jsonToSheetXlsx } from '~/components/Excel';
+import { jsonToSheetXlsx } from '~/components/Excel'
 
 jsonToSheetXlsx({
   data,

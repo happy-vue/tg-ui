@@ -2,18 +2,20 @@
   "name": "@tg-ui/examples",
   "private": true,
   "description": "",
+  "keywords": [],
+  "license": "ISC",
+  "author": "",
   "scripts": {
     "dev": "vite"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "dependencies": {},
+  "dependencies": {
+    "@tg-ui/components": "workspace:*"
+  },
   "devDependencies": {
-    "vue": "^3.2.25",
     "@vitejs/plugin-vue": "^2.3.0",
     "typescript": "^4.5.4",
     "vite": "^2.9.0",
+    "vue": "^3.2.25",
     "vue-tsc": "^0.29.8"
   }
 }

@@ -3,8 +3,8 @@ import { defineConfigWithTheme } from 'vitepress'
 import baseConfig from '@vue/theme/config'
 import type { Config } from '@vue/theme'
 import type { UserConfig } from 'vitepress'
-import { NavbarFix } from './plugins/navbar'
 import Components from 'unplugin-vue-components/vite'
+import { NavbarFix } from './plugins/navbar'
 
 export default defineConfigWithTheme<Config>({
   extends: baseConfig as () => UserConfig<Config>,
@@ -16,35 +16,35 @@ export default defineConfigWithTheme<Config>({
   srcDir: 'src',
 
   head: [
-    ['link', { rel: 'icon', href: '/favicon.ico' }]
+    ['link', { rel: 'icon', href: '/favicon.ico' }],
   ],
 
   themeConfig: {
     socialLinks: [
-      { icon: 'github', link: 'https://github.com/zgsgs/tg-ui.git' }
+      { icon: 'github', link: 'https://github.com/happy-vue/tg-ui.git' },
     ],
 
     editLink: {
       repo: 'zgsgs/tg-ui/docs',
-      text: 'Edit this page on GitHub'
+      text: 'Edit this page on GitHub',
     },
 
     nav: [
       { text: '教程', link: '/' },
       { text: '组件', link: '/components/' },
-      { text: '在线预览', link: 'https://zgsgs.netlify.app' }
+      { text: '在线预览', link: 'https://zgsgs.netlify.app' },
     ],
 
     sidebar: {
       '/guide/': getGuideSidebar(),
       '/components/': getComponentsSidebar(),
-      '/': getGuideSidebar()
-    }
+      '/': getGuideSidebar(),
+    },
   },
 
   vite: {
     define: {
-      __VUE_OPTIONS_API__: false
+      __VUE_OPTIONS_API__: false,
     },
     plugins: [
       NavbarFix(),
@@ -53,13 +53,13 @@ export default defineConfigWithTheme<Config>({
         include: [/\.vue$/, /\.vue\?vue/, /\.md$/],
         dts: '../.vitepress/components.d.ts',
         transformer: 'vue3',
-      })
-    ]
+      }),
+    ],
   },
 
   vue: {
-    reactivityTransform: true
-  }
+    reactivityTransform: true,
+  },
 })
 
 function getGuideSidebar() {
@@ -68,16 +68,16 @@ function getGuideSidebar() {
       text: '指南',
       items: [
         { text: '介绍', link: '/' },
-        { text: '贡献指南', link: '/guide/' }
-      ]
+        { text: '贡献指南', link: '/guide/' },
+      ],
     },
     {
       text: '开发指南',
       items: [
         { text: '新增路由', link: '/guide/add-route' },
         { text: '组件开发规范', link: '/guide/component' },
-      ]
-    }
+      ],
+    },
   ]
 }
 
@@ -87,8 +87,8 @@ function getComponentsSidebar() {
       text: '组件',
       items: [
         { text: '介绍', link: '/components/' },
-        { text: '文档模版', link: '/components/example' }
-      ]
+        { text: '文档模版', link: '/components/example' },
+      ],
     },
     {
       text: '常用组件',
@@ -96,7 +96,7 @@ function getComponentsSidebar() {
         { text: 'Excel', link: '/components/excel' },
         { text: '水印', link: '/components/watermark' },
         { text: '图片裁剪', link: '/components/cropper' },
-      ]
-    }
+      ],
+    },
   ]
 }

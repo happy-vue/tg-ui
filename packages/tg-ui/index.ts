@@ -1,6 +1,6 @@
 // import { WIcon,WButton } from "@tg-ui/components";
-import * as components from '@tg-ui/components';
-import type { App } from 'vue';
+import * as components from '@tg-ui/components'
+import type { App } from 'vue'
 
 // const components = [WIcon,WButton];
 
@@ -11,14 +11,14 @@ const install = (app: App) => {
   // components.forEach((component) => app.use(component));
 
   Object.entries(components).forEach(([name, component]) => {
-    app.component(name, component);
-  });
-};
+    app.component(name, component)
+  })
+}
 
-// app.use(WPlus)
+// use: app.use(WPlus)
 export default {
   install,
-};
+}
 
-// import { WIcon } from 'tg-ui
-export * from '@tg-ui/components';
+// use: import { WIcon } from 'tg-ui
+export * from '@tg-ui/components'

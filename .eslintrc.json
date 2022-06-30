@@ -1,4 +1,5 @@
 {
-  "root": true,
-  "extends": ["@tg-ui/eslint-config"]
+  "extends": [
+    "@zgsgs"
+  ]
 }

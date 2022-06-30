@@ -5,16 +5,16 @@
 ## Example
 
 ``` vue
-<template>
-  <count-to :start-val="startVal" :end-val="endVal" prefix="$" />
-</template>
-
 <script setup lang="ts">
 import { CountTo } from '~/components/CountTo'
 
 const startVal = ref(0)
 const endVal = ref(6666)
 </script>
+
+<template>
+  <count-to :start-val="startVal" :end-val="endVal" prefix="$" />
+</template>
 ```
 
 ## Props
